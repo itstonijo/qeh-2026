@@ -52,8 +52,8 @@ body {
 }
 
 .brand-mark--sm {
-  width: 28px;
-  height: 28px;
+  width: 32px;
+  height: 32px;
 }
 
 .brand-wordmark {
@@ -190,11 +190,21 @@ html {
 .footer-brand {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  color: var(--gold-soft);
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  font-size: 0.85rem;
+  gap: 0.55rem;
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.brand-wordmark--sm .brand-line-1 {
+  font-size: 0.82rem;
+  letter-spacing: 0.16em;
+}
+
+.brand-wordmark--sm .brand-line-2 {
+  font-size: 0.62rem;
+  letter-spacing: 0.36em;
+  margin-top: 0.15rem;
 }
 
 .nav-links a[aria-current="page"] {
