@@ -216,3 +216,46 @@ html {
 .inline-link:hover {
   color: var(--text);
 }
+
+@media (max-width: 420px) {
+  .nav {
+    flex-wrap: wrap;
+    gap: 0.75rem 1rem;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .nav-links a {
+    font-size: 0.8rem;
+    letter-spacing: 0.06em;
+  }
+}
+
+@media (max-width: 360px) {
+  .site-header {
+    padding-left: 0.875rem;
+    padding-right: 0.875rem;
+  }
+
+  .nav {
+    gap: 0.625rem 0.75rem;
+  }
+
+  .nav-links {
+    gap: 0.4rem 0.85rem;
+  }
+
+  .brand-line-1 {
+    font-size: 1rem;
+    letter-spacing: 0.16em;
+  }
+
+  .brand-line-2 {
+    letter-spacing: 0.38em;
+  }
+}
