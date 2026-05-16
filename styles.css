@@ -196,3 +196,23 @@ html {
   text-transform: uppercase;
   font-size: 0.85rem;
 }
+
+.nav-links a[aria-current="page"] {
+  color: var(--gold-soft);
+}
+
+.fine-print {
+  margin-top: 1rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.inline-link {
+  color: var(--gold-soft);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.inline-link:hover {
+  color: var(--text);
+}
