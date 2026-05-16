@@ -1,9 +1,14 @@
 :root {
-  --bg: #0f172a;
-  --panel: #111827;
-  --text: #e5e7eb;
-  --muted: #94a3b8;
-  --accent: #22d3ee;
+  --bg: #14101a;
+  --bg-deep: #0a0710;
+  --panel: #1c1726;
+  --text: #f4ecd8;
+  --muted: #b9a98a;
+  --gold: #d4af37;
+  --gold-soft: #f0d985;
+  --gold-deep: #8c6a1a;
+  --accent: var(--gold);
+  --border: #2a2233;
 }
 
 * {
@@ -12,9 +17,9 @@
 
 body {
   margin: 0;
-  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  font-family: "Cormorant Garamond", "Playfair Display", Georgia, "Times New Roman", serif;
   color: var(--text);
-  background: linear-gradient(180deg, var(--bg), #020617);
+  background: linear-gradient(180deg, var(--bg), var(--bg-deep));
   line-height: 1.5;
 }
 
@@ -30,19 +35,63 @@ body {
 }
 
 .brand {
-  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
   color: var(--text);
   text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.brand-mark {
+  display: block;
+  width: 44px;
+  height: 44px;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.45));
+}
+
+.brand-mark--sm {
+  width: 28px;
+  height: 28px;
+}
+
+.brand-wordmark {
+  display: inline-flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.brand-line-1 {
+  font-size: 1.05rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold-soft);
+}
+
+.brand-line-2 {
+  font-size: 0.8rem;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 0.2rem;
 }
 
 .nav-links {
   display: flex;
-  gap: 1rem;
+  gap: 1.25rem;
 }
 
 .nav-links a {
   color: var(--muted);
   text-decoration: none;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+.nav-links a:hover {
+  color: var(--gold-soft);
 }
 
 .hero {
@@ -62,13 +111,17 @@ body {
 }
 
 button {
-  background: var(--accent);
-  color: #082f49;
+  background: linear-gradient(180deg, var(--gold-soft), var(--gold) 55%, var(--gold-deep));
+  color: #2a1f05;
   border: none;
   border-radius: 999px;
-  padding: 0.8rem 1.3rem;
+  padding: 0.8rem 1.5rem;
   font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
   cursor: pointer;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.25) inset, 0 6px 16px rgba(0, 0, 0, 0.35);
 }
 
 main {
@@ -83,8 +136,8 @@ main {
 }
 
 .card {
-  background: rgba(17, 24, 39, 0.8);
-  border: 1px solid #1f2937;
+  background: rgba(28, 23, 38, 0.8);
+  border: 1px solid var(--border);
   border-radius: 14px;
   padding: 1rem;
 }
@@ -94,7 +147,21 @@ main {
 }
 
 .site-footer {
-  border-top: 1px solid #1f2937;
+  border-top: 1px solid var(--border);
   padding: 1.5rem clamp(1rem, 3vw, 3rem);
   color: var(--muted);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+  align-items: center;
+}
+
+.footer-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--gold-soft);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
 }

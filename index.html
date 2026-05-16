@@ -3,13 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Your Website</title>
+    <title>Queen Envy Hair</title>
+    <link rel="icon" type="image/svg+xml" href="assets/logo-mark.svg" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header class="site-header">
       <nav class="nav">
-        <a class="brand" href="#">MySite</a>
+        <a class="brand" href="#" aria-label="Queen Envy Hair home">
+          <img
+            class="brand-mark"
+            src="assets/logo.svg"
+            alt=""
+            width="44"
+            height="44"
+            decoding="async"
+          />
+          <span class="brand-wordmark">
+            <span class="brand-line-1">Queen Envy</span>
+            <span class="brand-line-2">Hair</span>
+          </span>
+        </a>
         <div class="nav-links">
           <a href="#features">Features</a>
           <a href="#about">About</a>
@@ -51,8 +65,19 @@
     </main>
 
     <footer id="contact" class="site-footer">
+      <div class="footer-brand">
+        <img
+          class="brand-mark brand-mark--sm"
+          src="assets/logo-mark.svg"
+          alt=""
+          width="28"
+          height="28"
+          decoding="async"
+        />
+        <span>Queen Envy Hair</span>
+      </div>
       <p>Contact: hello@example.com</p>
-      <p>&copy; <span id="year"></span> MySite</p>
+      <p>&copy; <span id="year"></span> Queen Envy Hair</p>
     </footer>
 
     <script src="script.js"></script>

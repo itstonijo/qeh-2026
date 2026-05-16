@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-label="Queen Envy Hair">
+  <title>Queen Envy Hair</title>
+  <defs>
+    <linearGradient id="qeh-mark-gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F7E7A8" />
+      <stop offset="50%" stop-color="#D4AF37" />
+      <stop offset="100%" stop-color="#8C6A1A" />
+    </linearGradient>
+  </defs>
+  <!-- Crown -->
+  <path d="M10 18 L16 8 L20 16 L24 6 L28 16 L32 8 L38 18 L36 22 L12 22 Z"
+        fill="url(#qeh-mark-gold)" stroke="#7A5A12" stroke-width="0.5" stroke-linejoin="round" />
+  <circle cx="16" cy="8" r="1.4" fill="#FFF4C2" stroke="#7A5A12" stroke-width="0.3" />
+  <circle cx="24" cy="6" r="1.6" fill="#FFF4C2" stroke="#7A5A12" stroke-width="0.3" />
+  <circle cx="32" cy="8" r="1.4" fill="#FFF4C2" stroke="#7A5A12" stroke-width="0.3" />
+  <!-- Hair flowing -->
+  <path d="M12 24
+           C 10 30, 12 38, 16 44
+           C 18 40, 19 36, 19 32
+           L 19 28
+           C 19 32, 21 34, 24 35
+           C 27 34, 29 32, 29 28
+           L 29 32
+           C 29 36, 30 40, 32 44
+           C 36 38, 38 30, 36 24 Z"
+        fill="url(#qeh-mark-gold)" />
+  <!-- Face -->
+  <ellipse cx="24" cy="28" rx="6" ry="7" fill="#FBF6E7" />
+</svg>
