@@ -1,0 +1,37 @@
+---
+interface Props {
+  eyebrow?: string;
+  heading?: string;
+  sub?: string;
+  primary?: { label: string; href: string };
+}
+
+const {
+  eyebrow = "Next step",
+  heading = "Let's talk about the number you need to move.",
+  sub = "Fifteen minutes, no deck, no junior account exec. You'll get a candid first read on what's worth doing.",
+  primary = { label: "Start a project", href: "/contact" },
+} = Astro.props;
+---
+
+<section class="py-24 md:py-32">
+  <div class="container-wide">
+    <div class="relative overflow-hidden rounded-3xl border border-[color:var(--color-line)] bg-[color:var(--color-ink-2)] p-10 md:p-16">
+      <div aria-hidden="true" class="pointer-events-none absolute -top-32 right-0 h-72 w-72 rounded-full bg-[color:var(--color-accent)]/15 blur-3xl"></div>
+      <div class="relative grid gap-8 md:grid-cols-[1.4fr_1fr] md:items-end">
+        <div>
+          <p class="eyebrow">{eyebrow}</p>
+          <h2 class="mt-6 font-display text-4xl font-medium leading-[0.98] tracking-tight md:text-6xl">{heading}</h2>
+          <p class="mt-5 max-w-xl text-[color:var(--color-bone-dim)]">{sub}</p>
+        </div>
+        <div class="flex flex-wrap items-center gap-3 md:justify-end">
+          <a href={primary.href} class="btn-primary">
+            {primary.label}
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+          <a href="/work" class="btn-ghost">See the work</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

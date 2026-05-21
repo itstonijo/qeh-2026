@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #0a0a0a;
+  --color-ink-2: #111114;
+  --color-ink-3: #1a1a1f;
+  --color-bone: #f5f3ee;
+  --color-bone-dim: #c9c6bf;
+  --color-mute: #8a8780;
+  --color-line: #26262b;
+  --color-accent: #d4ff3a;
+  --color-accent-2: #b6f10a;
+
+  --font-display: "Space Grotesk", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --radius-pill: 9999px;
+}
+
+@layer base {
+  html {
+    background-color: var(--color-ink);
+    color: var(--color-bone);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply min-h-screen overflow-x-hidden;
+    background:
+      radial-gradient(1200px 600px at 80% -10%, rgba(212, 255, 58, 0.08), transparent 60%),
+      radial-gradient(900px 500px at -10% 30%, rgba(212, 255, 58, 0.04), transparent 60%),
+      var(--color-ink);
+  }
+
+  ::selection {
+    background: var(--color-accent);
+    color: var(--color-ink);
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+
+  a {
+    @apply transition-colors;
+  }
+}
+
+@layer components {
+  .container-wide {
+    @apply mx-auto w-full max-w-[88rem] px-6 md:px-10;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.18em] text-[color:var(--color-bone-dim)];
+  }
+
+  .eyebrow::before {
+    content: "";
+    @apply h-1.5 w-1.5 rounded-full bg-[color:var(--color-accent)];
+  }
+
+  .hairline {
+    @apply h-px w-full bg-[color:var(--color-line)];
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 rounded-full bg-[color:var(--color-accent)] px-5 py-3 text-sm font-medium text-[color:var(--color-ink)] hover:bg-[color:var(--color-accent-2)];
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 rounded-full border border-[color:var(--color-line)] px-5 py-3 text-sm text-[color:var(--color-bone)] hover:border-[color:var(--color-accent)] hover:text-[color:var(--color-accent)];
+  }
+
+  .link-underline {
+    @apply relative inline-flex items-center gap-2 text-[color:var(--color-bone)] hover:text-[color:var(--color-accent)];
+  }
+}
+
+/* Marquee */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.marquee-track {
+  animation: marquee 38s linear infinite;
+  width: max-content;
+}
+
+/* Reveal on load */
+@keyframes rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.rise {
+  animation: rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+.rise-1 { animation-delay: 0.05s; }
+.rise-2 { animation-delay: 0.15s; }
+.rise-3 { animation-delay: 0.25s; }
+.rise-4 { animation-delay: 0.35s; }

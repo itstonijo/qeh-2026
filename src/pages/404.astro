@@ -1,0 +1,21 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="404 · Covert." description="The page you wanted has moved or never existed.">
+  <section class="flex min-h-[70vh] items-center py-24">
+    <div class="container-wide">
+      <p class="eyebrow">404</p>
+      <h1 class="mt-6 font-display text-[18vw] font-semibold leading-[0.9] tracking-[-0.04em] md:text-[12rem]">
+        Covert. <span class="text-[color:var(--color-mute)]">Too covert.</span>
+      </h1>
+      <p class="mt-6 max-w-xl text-lg text-[color:var(--color-bone-dim)]">
+        Either this page never existed, or we've covered our tracks. Both are on-brand.
+      </p>
+      <div class="mt-10 flex flex-wrap gap-3">
+        <a href="/" class="btn-primary">Back home</a>
+        <a href="/work" class="btn-ghost">See the work</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

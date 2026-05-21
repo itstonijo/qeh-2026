@@ -1,0 +1,132 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import { site } from "../data/site";
+import { servicesNav } from "../data/site";
+---
+
+<BaseLayout
+  title="Contact Covert. — Start a digital project"
+  description="Start a project with Covert. Tell us the number you need to move and we'll come back within one business day."
+>
+  <PageHero
+    eyebrow="Contact"
+    title="Tell us the number you need to move."
+    lede="A short brief. One business-day reply. No template auto-responses, no junior triage."
+  />
+
+  <section class="border-t border-[color:var(--color-line)] py-20 md:py-24">
+    <div class="container-wide grid gap-16 lg:grid-cols-[1.4fr_1fr]">
+      <form class="space-y-8" action="#" method="post" novalidate>
+        <div class="grid gap-6 md:grid-cols-2">
+          <label class="block">
+            <span class="font-mono text-[11px] uppercase tracking-[0.18em] text-[color:var(--color-bone-dim)]">Your name</span>
+            <input
+              type="text"
+              name="name"
+              required
+              class="mt-2 w-full border-0 border-b border-[color:var(--color-line)] bg-transparent py-3 text-lg text-[color:var(--color-bone)] outline-none focus:border-[color:var(--color-accent)]"
+              placeholder="Jane Hsu"
+            />
+          </label>
+          <label class="block">
+            <span class="font-mono text-[11px] uppercase tracking-[0.18em] text-[color:var(--color-bone-dim)]">Company</span>
+            <input
+              type="text"
+              name="company"
+              class="mt-2 w-full border-0 border-b border-[color:var(--color-line)] bg-transparent py-3 text-lg text-[color:var(--color-bone)] outline-none focus:border-[color:var(--color-accent)]"
+              placeholder="Acme Co."
+            />
+          </label>
+          <label class="block">
+            <span class="font-mono text-[11px] uppercase tracking-[0.18em] text-[color:var(--color-bone-dim)]">Email</span>
+            <input
+              type="email"
+              name="email"
+              required
+              class="mt-2 w-full border-0 border-b border-[color:var(--color-line)] bg-transparent py-3 text-lg text-[color:var(--color-bone)] outline-none focus:border-[color:var(--color-accent)]"
+              placeholder="you@company.com"
+            />
+          </label>
+          <label class="block">
+            <span class="font-mono text-[11px] uppercase tracking-[0.18em] text-[color:var(--color-bone-dim)]">Budget (AUD)</span>
+            <select name="budget" class="mt-2 w-full appearance-none border-0 border-b border-[color:var(--color-line)] bg-transparent py-3 text-lg text-[color:var(--color-bone)] outline-none focus:border-[color:var(--color-accent)]">
+              <option value="" class="bg-[color:var(--color-ink-2)]">Select a range</option>
+              <option value="lt-50k" class="bg-[color:var(--color-ink-2)]">Under $50k</option>
+              <option value="50-150k" class="bg-[color:var(--color-ink-2)]">$50k — $150k</option>
+              <option value="150-500k" class="bg-[color:var(--color-ink-2)]">$150k — $500k</option>
+              <option value="500k+" class="bg-[color:var(--color-ink-2)]">$500k+</option>
+            </select>
+          </label>
+        </div>
+
+        <fieldset>
+          <legend class="font-mono text-[11px] uppercase tracking-[0.18em] text-[color:var(--color-bone-dim)]">What do you need?</legend>
+          <ul class="mt-4 flex flex-wrap gap-2">
+            {servicesNav.map((s) => (
+              <li>
+                <label class="inline-flex cursor-pointer items-center gap-2 rounded-full border border-[color:var(--color-line)] px-4 py-2 text-sm has-[:checked]:border-[color:var(--color-accent)] has-[:checked]:bg-[color:var(--color-accent)] has-[:checked]:text-[color:var(--color-ink)]">
+                  <input type="checkbox" name="services" value={s.label} class="sr-only" />
+                  {s.label}
+                </label>
+              </li>
+            ))}
+          </ul>
+        </fieldset>
+
+        <label class="block">
+          <span class="font-mono text-[11px] uppercase tracking-[0.18em] text-[color:var(--color-bone-dim)]">A short brief</span>
+          <textarea
+            name="brief"
+            rows="5"
+            class="mt-2 w-full resize-y border-0 border-b border-[color:var(--color-line)] bg-transparent py-3 text-lg text-[color:var(--color-bone)] outline-none focus:border-[color:var(--color-accent)]"
+            placeholder="What number do you need to move?"
+          ></textarea>
+        </label>
+
+        <div class="flex items-center justify-between gap-4">
+          <p class="max-w-md text-xs text-[color:var(--color-mute)]">
+            We'll only use what you send to reply about your project. No newsletter trick.
+          </p>
+          <button type="submit" class="btn-primary">
+            Send brief
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+      </form>
+
+      <aside class="space-y-10">
+        <div>
+          <p class="eyebrow">Direct</p>
+          <ul class="mt-6 space-y-3 text-lg">
+            <li><a class="link-underline" href={`mailto:${site.email}`}>{site.email}</a></li>
+            <li><a class="link-underline" href={`tel:${site.phone.replace(/\s+/g, "")}`}>{site.phone}</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="eyebrow">Studio</p>
+          <address class="mt-6 not-italic text-[color:var(--color-bone-dim)]">
+            {site.address.line1}<br />
+            {site.address.line2}<br />
+            {site.address.country}
+          </address>
+        </div>
+        <div>
+          <p class="eyebrow">Hours</p>
+          <p class="mt-6 text-[color:var(--color-bone-dim)]">
+            Monday — Friday, 09:00 — 18:00 AEST<br />
+            We reply within one business day.
+          </p>
+        </div>
+        <div>
+          <p class="eyebrow">Social</p>
+          <ul class="mt-6 space-y-2">
+            {site.socials.map((s) => (
+              <li><a href={s.href} class="link-underline">{s.label} →</a></li>
+            ))}
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+</BaseLayout>

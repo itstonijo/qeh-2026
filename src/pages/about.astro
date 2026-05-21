@@ -1,0 +1,146 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import CTAStrip from "../components/CTAStrip.astro";
+import { stats } from "../data/clients";
+
+const principles = [
+  {
+    n: "01",
+    title: "Performance, audited.",
+    body: "Every program is measured against revenue or qualified pipeline. We retire vanity metrics quarterly.",
+  },
+  {
+    n: "02",
+    title: "Strategy before media.",
+    body: "We won't run paid until we can defend the thesis. A spreadsheet is cheaper than a quarter of wasted spend.",
+  },
+  {
+    n: "03",
+    title: "Editorial as a moat.",
+    body: "AI didn't kill content. It killed bad content. Real expertise, real data and real opinions still win — and now they win harder.",
+  },
+  {
+    n: "04",
+    title: "Specialists, not generalists.",
+    body: "We hire deep, not broad. The person running your SEO has run SEO for a decade. So has the person running your paid.",
+  },
+  {
+    n: "05",
+    title: "Operate, don't theatre.",
+    body: "Weekly sprints, monthly reviews, quarterly resets. No 80-slide decks. No tactical PowerPoint warfare.",
+  },
+  {
+    n: "06",
+    title: "Long client relationships.",
+    body: "Our average engagement is north of three years. Programs that compound need time, and clients we like.",
+  },
+];
+
+const team = [
+  { name: "Founder & Director", role: "Strategy · SEO · CRM" },
+  { name: "Head of Paid Media", role: "Search · Social · Programmatic" },
+  { name: "Head of SEO & AEO", role: "Technical · Editorial · Entity" },
+  { name: "Head of Content", role: "Editorial · Video · Social" },
+  { name: "Head of Engineering", role: "Web · App · CMS" },
+  { name: "Client Partner", role: "Account · Ops · Reporting" },
+];
+---
+
+<BaseLayout
+  title="About Covert. — A studio of performance specialists"
+  description="Covert is a small, deep team of performance marketing specialists in Sydney. Strategy, SEO, AEO, paid, content, CRM and build under one roof."
+>
+  <PageHero
+    eyebrow="About"
+    title="A small studio of deep specialists. Built for programs that compound."
+    lede="Covert. was founded in Sydney in 2019. Six years on, we're still small on purpose — a senior team that does the work themselves, for a short list of clients who are in for the long haul."
+  />
+
+  <section class="border-t border-[color:var(--color-line)] py-24 md:py-32">
+    <div class="container-wide grid gap-16 md:grid-cols-[1fr_1.4fr]">
+      <div>
+        <p class="eyebrow">The story</p>
+        <h2 class="mt-6 font-display text-4xl font-medium leading-tight tracking-tight md:text-5xl">
+          We started Covert because we were tired of agencies that confused activity with progress.
+        </h2>
+      </div>
+      <div class="space-y-6 text-lg text-[color:var(--color-bone-dim)]">
+        <p>
+          The brief was simple: build a digital partner that operated like an internal team, sat next to the CFO instead of behind a deck, and could be measured against revenue without flinching.
+        </p>
+        <p>
+          That meant being small. It meant hiring people who'd already done the job — not training them on your account. And it meant being honest about which problems we'd take on and which ones we wouldn't.
+        </p>
+        <p>
+          Six years and a long list of compounding programs later, the thesis still holds. We do strategy, SEO, AEO, paid media, content, CRM and build — under one roof, for clients in Australia, the UK, the US and Singapore.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="border-t border-[color:var(--color-line)] py-24 md:py-32">
+    <div class="container-wide">
+      <p class="eyebrow">Principles</p>
+      <h2 class="mt-6 font-display text-5xl font-medium leading-[0.95] tracking-tight md:text-7xl">Six rules we don't break.</h2>
+
+      <div class="mt-16 grid gap-px overflow-hidden rounded-3xl border border-[color:var(--color-line)] bg-[color:var(--color-line)] md:grid-cols-3">
+        {principles.map((p) => (
+          <article class="flex flex-col gap-4 bg-[color:var(--color-ink-2)] p-8">
+            <span class="font-mono text-xs text-[color:var(--color-accent)]">{p.n}</span>
+            <h3 class="font-display text-2xl tracking-tight md:text-3xl">{p.title}</h3>
+            <p class="text-sm text-[color:var(--color-bone-dim)]">{p.body}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="border-t border-[color:var(--color-line)] py-24 md:py-32">
+    <div class="container-wide">
+      <p class="eyebrow">Numbers</p>
+      <h2 class="mt-6 font-display text-5xl font-medium leading-[0.95] tracking-tight md:text-7xl">A studio you can audit.</h2>
+
+      <dl class="mt-16 grid grid-cols-2 gap-px overflow-hidden rounded-3xl border border-[color:var(--color-line)] bg-[color:var(--color-line)] md:grid-cols-4">
+        {stats.map((s) => (
+          <div class="bg-[color:var(--color-ink-2)] p-8">
+            <dt class="font-mono text-[11px] uppercase tracking-[0.18em] text-[color:var(--color-bone-dim)]">{s.label}</dt>
+            <dd class="mt-6 font-display text-5xl font-semibold tracking-tight md:text-6xl">{s.value}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  </section>
+
+  <section class="border-t border-[color:var(--color-line)] py-24 md:py-32">
+    <div class="container-wide">
+      <div class="grid gap-10 md:grid-cols-[1fr_1.6fr] md:items-end">
+        <div>
+          <p class="eyebrow">Team</p>
+          <h2 class="mt-6 font-display text-5xl font-medium leading-[0.95] tracking-tight md:text-7xl">Senior on every account.</h2>
+        </div>
+        <p class="text-lg text-[color:var(--color-bone-dim)]">
+          The people you meet in the pitch are the people who run the work. No junior offload, no offshore handover.
+        </p>
+      </div>
+
+      <ul class="mt-16 divide-y divide-[color:var(--color-line)] border-y border-[color:var(--color-line)]">
+        {team.map((t, i) => (
+          <li class="flex items-center justify-between py-6">
+            <div class="flex items-center gap-8">
+              <span class="font-mono text-xs text-[color:var(--color-mute)]">{String(i + 1).padStart(2, "0")}</span>
+              <h3 class="font-display text-2xl tracking-tight md:text-3xl">{t.name}</h3>
+            </div>
+            <p class="text-sm text-[color:var(--color-bone-dim)] md:text-base">{t.role}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <CTAStrip
+    eyebrow="Work with us"
+    heading="Selective on clients. Generous with attention."
+    sub="We take on a small number of new clients each year. If you have a program worth compounding, we'd like to hear from you."
+  />
+</BaseLayout>
