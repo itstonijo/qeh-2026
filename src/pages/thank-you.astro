@@ -1,0 +1,28 @@
+---
+export const prerender = true;
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Thanks — we've got your brief"
+  description="Your brief has reached Covert. We'll reply within one business day."
+>
+  <section class="flex min-h-[70vh] items-center py-24">
+    <div class="container-wide">
+      <p class="eyebrow">Sent</p>
+      <h1 class="mt-6 max-w-4xl font-display text-[12vw] font-semibold leading-[0.92] tracking-[-0.035em] md:text-[7rem]">
+        Thanks. <span class="text-[color:var(--color-mute)]">We've got your brief.</span>
+      </h1>
+      <p class="mt-8 max-w-2xl text-lg text-[color:var(--color-bone-dim)] md:text-xl">
+        A senior from Covert. will reply within one business day. If it's urgent, the studio inbox is the fastest way through.
+      </p>
+      <div class="mt-10 flex flex-wrap gap-3">
+        <a href="/work" class="btn-primary">
+          See the work
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+        <a href="/blog" class="btn-ghost">Read insights</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

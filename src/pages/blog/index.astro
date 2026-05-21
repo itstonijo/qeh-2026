@@ -1,7 +1,8 @@
 ---
+export const prerender = true;
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import PageHero from "../../components/PageHero.astro";
-import CTAStrip from "../../components/CTAStrip.astro";
+import NewsletterSignup from "../../components/NewsletterSignup.astro";
 import { posts } from "../../data/posts";
 
 const sorted = [...posts].sort((a, b) => (a.date < b.date ? 1 : -1));
@@ -72,10 +73,8 @@ const fmt = (d: string) =>
     </div>
   </section>
 
-  <CTAStrip
-    eyebrow="Subscribe"
+  <NewsletterSignup
     heading="Send these to my inbox."
-    sub="One short email a month. No filler, no funnel."
-    primary={{ label: "Subscribe", href: "#newsletter" }}
+    sub="One short email a month. Notes on AEO, SEO, paid and CRM from the people running the programs."
   />
 </BaseLayout>
