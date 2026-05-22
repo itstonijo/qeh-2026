@@ -1,0 +1,15 @@
+[build]
+  command = "npm run build"
+  publish = "dist/client"
+
+[functions]
+  node_bundler = "esbuild"
+
+# Netlify serves the SSR build via @astrojs/netlify if you swap the adapter.
+# Default here keeps the Node adapter; swap to @astrojs/netlify if you want
+# automatic edge-function wiring on Netlify.
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/entry/api/:splat"
+  status = 200

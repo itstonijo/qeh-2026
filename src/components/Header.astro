@@ -1,16 +1,21 @@
 ---
 import { nav, site } from "../data/site";
+import { url } from "../lib/url";
 
 const { pathname } = Astro.url;
+const BASE = (import.meta.env.BASE_URL || "/").replace(/\/+$/, "");
+const stripBase = (p: string) => (BASE && p.startsWith(BASE) ? p.slice(BASE.length) || "/" : p);
+const here = stripBase(pathname);
+
 const isActive = (href: string) => {
-  if (href === "/") return pathname === "/";
-  return pathname.startsWith(href);
+  if (href === "/") return here === "/";
+  return here.startsWith(href);
 };
 ---
 
 <header class="sticky top-0 z-50 border-b border-[color:var(--color-line)]/60 bg-[color:var(--color-ink)]/80 backdrop-blur supports-[backdrop-filter]:bg-[color:var(--color-ink)]/60">
   <div class="container-wide flex h-16 items-center justify-between gap-6">
-    <a href="/" class="flex items-baseline gap-1 text-[color:var(--color-bone)]">
+    <a href={url("/")} class="flex items-baseline gap-1 text-[color:var(--color-bone)]">
       <span class="font-display text-xl font-semibold tracking-tight">{site.name}</span>
       <span class="hidden font-mono text-[10px] uppercase tracking-[0.22em] text-[color:var(--color-mute)] md:inline">
         Performance-led digital
@@ -20,7 +25,7 @@ const isActive = (href: string) => {
     <nav class="hidden items-center gap-1 md:flex">
       {nav.map((item) => (
         <a
-          href={item.href}
+          href={url(item.href)}
           class:list={[
             "rounded-full px-4 py-2 text-sm transition-colors",
             isActive(item.href)
@@ -34,7 +39,7 @@ const isActive = (href: string) => {
     </nav>
 
     <div class="flex items-center gap-2">
-      <a href="/contact" class="hidden btn-primary md:inline-flex">
+      <a href={url("/contact")} class="hidden btn-primary md:inline-flex">
         Start a project
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
       </a>
@@ -52,11 +57,11 @@ const isActive = (href: string) => {
   <div id="mobile-menu" class="hidden border-t border-[color:var(--color-line)]/60 md:hidden">
     <div class="container-wide flex flex-col gap-2 py-4">
       {nav.map((item) => (
-        <a href={item.href} class="rounded-xl px-3 py-3 text-base text-[color:var(--color-bone)] hover:bg-[color:var(--color-ink-3)]">
+        <a href={url(item.href)} class="rounded-xl px-3 py-3 text-base text-[color:var(--color-bone)] hover:bg-[color:var(--color-ink-3)]">
           {item.label}
         </a>
       ))}
-      <a href="/contact" class="btn-primary mt-2 justify-center">Start a project</a>
+      <a href={url("/contact")} class="btn-primary mt-2 justify-center">Start a project</a>
     </div>
   </div>
 </header>

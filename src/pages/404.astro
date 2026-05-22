@@ -1,6 +1,7 @@
 ---
 export const prerender = true;
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { url } from "../lib/url";
 ---
 
 <BaseLayout title="404 · Covert." description="The page you wanted has moved or never existed.">
@@ -14,8 +15,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         Either this page never existed, or we've covered our tracks. Both are on-brand.
       </p>
       <div class="mt-10 flex flex-wrap gap-3">
-        <a href="/" class="btn-primary">Back home</a>
-        <a href="/work" class="btn-ghost">See the work</a>
+        <a href={url("/")} class="btn-primary">Back home</a>
+        <a href={url("/work")} class="btn-ghost">See the work</a>
       </div>
     </div>
   </section>

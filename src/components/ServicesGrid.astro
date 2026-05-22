@@ -1,5 +1,6 @@
 ---
 import { services } from "../data/services";
+import { url } from "../lib/url";
 ---
 
 <section id="services" class="border-t border-[color:var(--color-line)] py-24 md:py-32">
@@ -19,7 +20,7 @@ import { services } from "../data/services";
     <ul class="mt-16 divide-y divide-[color:var(--color-line)] border-y border-[color:var(--color-line)]">
       {services.map((s) => (
         <li class="group">
-          <a href={s.href} class="flex flex-col gap-4 py-8 md:flex-row md:items-start md:gap-10">
+          <a href={url(s.href)} class="flex flex-col gap-4 py-8 md:flex-row md:items-start md:gap-10">
             <div class="flex w-full items-center justify-between md:w-44">
               <span class="font-mono text-xs text-[color:var(--color-mute)]">{s.number} —</span>
               <span class="md:hidden text-[color:var(--color-accent)]">→</span>

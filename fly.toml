@@ -1,0 +1,30 @@
+# Fly.io deploy config — uses the Dockerfile in this repo.
+# Setup:
+#   fly launch --no-deploy --copy-config        # accept the existing fly.toml
+#   fly deploy
+app = "covert-replica"
+primary_region = "syd"
+
+[build]
+  dockerfile = "Dockerfile"
+
+[env]
+  HOST = "0.0.0.0"
+  PORT = "4321"
+  SITE_URL = "https://covert-replica.fly.dev"
+
+[http_service]
+  internal_port = 4321
+  force_https = true
+  auto_stop_machines = "stop"
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ["app"]
+
+[[mounts]]
+  source = "covert_data"
+  destination = "/app/.data"
+
+[[vm]]
+  size = "shared-cpu-1x"
+  memory = "512mb"

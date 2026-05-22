@@ -1,5 +1,6 @@
 ---
 import { work } from "../data/work";
+import { url } from "../lib/url";
 
 interface Props {
   limit?: number;
@@ -20,7 +21,7 @@ const items = limit ? work.slice(0, limit) : work;
         <h2 class="mt-6 font-display text-5xl font-medium leading-[0.95] tracking-tight md:text-7xl">{heading}</h2>
       </div>
       {showCTA && (
-        <a href="/work" class="btn-ghost">
+        <a href={url("/work")} class="btn-ghost">
           All work
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
         </a>
@@ -37,7 +38,7 @@ const items = limit ? work.slice(0, limit) : work;
             : "md:col-span-2";
         return (
           <a
-            href={`/work/${c.slug}`}
+            href={url(`/work/${c.slug}`)}
             class:list={[
               "group relative isolate flex min-h-[340px] flex-col justify-between overflow-hidden rounded-3xl border border-[color:var(--color-line)] bg-[color:var(--color-ink-2)] p-7 transition-colors hover:border-[color:var(--color-bone-dim)] md:min-h-[420px]",
               span,

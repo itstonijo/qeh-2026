@@ -1,5 +1,6 @@
 ---
 import { site, servicesNav, nav } from "../data/site";
+import { url } from "../lib/url";
 const year = new Date().getFullYear();
 ---
 
@@ -13,7 +14,7 @@ const year = new Date().getFullYear();
           <span class="text-[color:var(--color-mute)]">We probably have a plan for it.</span>
         </h2>
         <div class="mt-8 flex flex-wrap items-center gap-3">
-          <a href="/contact" class="btn-primary">
+          <a href={url("/contact")} class="btn-primary">
             Start a project
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
           </a>
@@ -25,7 +26,7 @@ const year = new Date().getFullYear();
         <p class="eyebrow">Services</p>
         <ul class="mt-5 space-y-3">
           {servicesNav.map((item) => (
-            <li><a href={item.href} class="text-[color:var(--color-bone)] hover:text-[color:var(--color-accent)]">{item.label}</a></li>
+            <li><a href={url(item.href)} class="text-[color:var(--color-bone)] hover:text-[color:var(--color-accent)]">{item.label}</a></li>
           ))}
         </ul>
       </div>
@@ -34,7 +35,7 @@ const year = new Date().getFullYear();
         <p class="eyebrow">Studio</p>
         <ul class="mt-5 space-y-3">
           {nav.map((item) => (
-            <li><a href={item.href} class="text-[color:var(--color-bone)] hover:text-[color:var(--color-accent)]">{item.label}</a></li>
+            <li><a href={url(item.href)} class="text-[color:var(--color-bone)] hover:text-[color:var(--color-accent)]">{item.label}</a></li>
           ))}
         </ul>
       </div>

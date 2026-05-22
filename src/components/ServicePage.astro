@@ -2,6 +2,7 @@
 import PageHero from "./PageHero.astro";
 import CTAStrip from "./CTAStrip.astro";
 import { services } from "../data/services";
+import { url } from "../lib/url";
 
 interface Props {
   slug: string;
@@ -98,7 +99,7 @@ const others = services.filter((s) => s.slug !== slug);
     <ul class="mt-12 divide-y divide-[color:var(--color-line)] border-y border-[color:var(--color-line)]">
       {others.map((s) => (
         <li>
-          <a href={s.href} class="flex flex-col gap-3 py-6 md:flex-row md:items-center md:gap-10">
+          <a href={url(s.href)} class="flex flex-col gap-3 py-6 md:flex-row md:items-center md:gap-10">
             <span class="font-mono text-xs text-[color:var(--color-mute)] md:w-16">{s.number}</span>
             <h3 class="flex-1 font-display text-3xl tracking-tight hover:text-[color:var(--color-accent)] md:text-4xl">{s.title}</h3>
             <p class="hidden max-w-md text-sm text-[color:var(--color-bone-dim)] md:block">{s.short}</p>

@@ -1,5 +1,6 @@
 ---
 import { clients } from "../data/clients";
+import { url } from "../lib/url";
 ---
 
 <section class="relative pt-16 pb-24 md:pt-24 md:pb-32">
@@ -17,11 +18,11 @@ import { clients } from "../data/clients";
 
     <div class="mt-14 grid items-end gap-10 border-t border-[color:var(--color-line)] pt-10 md:grid-cols-[1.3fr_1fr]">
       <div class="rise rise-3 flex flex-wrap items-center gap-3">
-        <a href="/work" class="btn-primary">
+        <a href={url("/work")} class="btn-primary">
           See the work
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
         </a>
-        <a href="/digital-marketing" class="btn-ghost">What we do</a>
+        <a href={url("/digital-marketing")} class="btn-ghost">What we do</a>
         <p class="ml-2 max-w-md text-base text-[color:var(--color-bone-dim)] md:text-lg">
           Covert. is a Surry Hills digital agency running SEO, AEO, paid media, content, CRM and strategy as one program — measured on pipeline, not impressions.
         </p>

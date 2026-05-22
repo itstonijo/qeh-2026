@@ -4,6 +4,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import PageHero from "../components/PageHero.astro";
 import { site } from "../data/site";
 import { servicesNav } from "../data/site";
+import { url } from "../lib/url";
+
+const formEndpoint = import.meta.env.PUBLIC_FORM_ENDPOINT || url("/api/contact");
+const isStatic = !!import.meta.env.PUBLIC_STATIC_BUILD;
 ---
 
 <BaseLayout
@@ -21,10 +25,13 @@ import { servicesNav } from "../data/site";
       <form
         id="brief-form"
         class="space-y-8"
-        action="/api/contact"
+        action={formEndpoint}
         method="post"
         novalidate
         data-async
+        data-static={isStatic ? "true" : "false"}
+        data-thanks-url={url("/thank-you")}
+        data-email={site.email}
       >
         <div role="status" aria-live="polite" data-form-message class="hidden rounded-2xl border border-[color:var(--color-line)] bg-[color:var(--color-ink-2)] p-5 text-sm"></div>
 
@@ -175,25 +182,41 @@ import { servicesNav } from "../data/site";
         busy?.classList.toggle("inline-flex", busyState);
       };
 
+      const isStaticBuild = form.dataset.static === "true";
+      const isExternalEndpoint = !form.action.startsWith(window.location.origin);
+      const thanksUrl = (document.querySelector('link[rel="prefetch-thanks"]') as HTMLLinkElement | null)?.href
+        || form.dataset.thanksUrl
+        || (window as any).__THANKS_URL__
+        || "/thank-you";
+
       form.addEventListener("submit", async (event) => {
         event.preventDefault();
         const data = new FormData(form);
         setBusy(true);
         if (msg) msg.classList.add("hidden");
+
         try {
-          const res = await fetch(form.action, { method: "POST", body: data, headers: { Accept: "application/json" } });
-          const json = await res.json().catch(() => ({}));
-          if (res.ok && json?.ok) {
+          const res = await fetch(form.action, {
+            method: "POST",
+            body: isExternalEndpoint ? data : data,
+            headers: { Accept: "application/json" },
+          });
+          // External endpoints (Formspree etc.) may not return JSON.
+          let json: any = {};
+          try { json = await res.clone().json(); } catch { /* ignore */ }
+          const succeeded = res.ok && (json?.ok !== false);
+
+          if (succeeded) {
             form.reset();
-            show(json.message || "Thanks — we'll be in touch within one business day.", "ok");
-            setTimeout(() => {
-              window.location.assign("/thank-you");
-            }, 800);
+            show(json?.message || "Thanks — we'll be in touch within one business day.", "ok");
+            setTimeout(() => window.location.assign(thanksUrl), 800);
           } else if (json?.errors) {
             const first = Object.values(json.errors)[0] as string;
             show(first || "Check the fields above.", "err");
+          } else if (res.status === 404 && isStaticBuild) {
+            show("This static deployment isn't wired to a form endpoint. Set PUBLIC_FORM_ENDPOINT (e.g. a Formspree URL) at build time, or email " + (form.dataset.email || "us") + " directly.", "err");
           } else {
-            show(json?.error || "Something went wrong. Try again in a moment.", "err");
+            show(json?.error || `Couldn't send (${res.status}). Try again in a moment.`, "err");
           }
         } catch {
           show("Network blip. Try again in a moment.", "err");

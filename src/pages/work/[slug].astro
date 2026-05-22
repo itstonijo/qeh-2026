@@ -4,6 +4,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import CTAStrip from "../../components/CTAStrip.astro";
 import Testimonial from "../../components/Testimonial.astro";
 import { work } from "../../data/work";
+import { url } from "../../lib/url";
 
 export function getStaticPaths() {
   return work.map((c) => ({ params: { slug: c.slug }, props: { study: c } }));
@@ -22,7 +23,7 @@ const next = work[(idx + 1) % work.length];
   <article>
     <header class="border-b border-[color:var(--color-line)] pt-16 pb-16 md:pt-24 md:pb-24">
       <div class="container-wide">
-        <a href="/work" class="link-underline font-mono text-xs uppercase tracking-[0.18em]">← All work</a>
+        <a href={url("/work")} class="link-underline font-mono text-xs uppercase tracking-[0.18em]">← All work</a>
 
         <p class="eyebrow mt-10">{study.hero.eyebrow}</p>
         <h1 class="mt-6 max-w-5xl font-display text-5xl font-semibold leading-[0.95] tracking-[-0.03em] md:text-[5.5rem]">
@@ -117,11 +118,11 @@ const next = work[(idx + 1) % work.length];
       <div class="container-wide flex flex-col justify-between gap-8 md:flex-row md:items-end">
         <div>
           <p class="eyebrow">Next case study</p>
-          <a href={`/work/${next.slug}`} class="mt-6 block font-display text-4xl font-medium tracking-tight hover:text-[color:var(--color-accent)] md:text-6xl">
+          <a href={url(`/work/${next.slug}`)} class="mt-6 block font-display text-4xl font-medium tracking-tight hover:text-[color:var(--color-accent)] md:text-6xl">
             {next.client} →
           </a>
         </div>
-        <a href="/work" class="btn-ghost">All work</a>
+        <a href={url("/work")} class="btn-ghost">All work</a>
       </div>
     </section>
   </article>

@@ -1,4 +1,6 @@
 ---
+import { url } from "../lib/url";
+
 interface Props {
   eyebrow?: string;
   heading?: string;
@@ -25,11 +27,11 @@ const {
           <p class="mt-5 max-w-xl text-[color:var(--color-bone-dim)]">{sub}</p>
         </div>
         <div class="flex flex-wrap items-center gap-3 md:justify-end">
-          <a href={primary.href} class="btn-primary">
+          <a href={url(primary.href)} class="btn-primary">
             {primary.label}
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
           </a>
-          <a href="/work" class="btn-ghost">See the work</a>
+          <a href={url("/work")} class="btn-ghost">See the work</a>
         </div>
       </div>
     </div>

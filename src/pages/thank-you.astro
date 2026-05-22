@@ -1,6 +1,7 @@
 ---
 export const prerender = true;
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { url } from "../lib/url";
 ---
 
 <BaseLayout
@@ -17,11 +18,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         A senior from Covert. will reply within one business day. If it's urgent, the studio inbox is the fastest way through.
       </p>
       <div class="mt-10 flex flex-wrap gap-3">
-        <a href="/work" class="btn-primary">
+        <a href={url("/work")} class="btn-primary">
           See the work
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
         </a>
-        <a href="/blog" class="btn-ghost">Read insights</a>
+        <a href={url("/blog")} class="btn-ghost">Read insights</a>
       </div>
     </div>
   </section>

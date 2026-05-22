@@ -4,6 +4,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import PageHero from "../../components/PageHero.astro";
 import NewsletterSignup from "../../components/NewsletterSignup.astro";
 import { posts } from "../../data/posts";
+import { url } from "../../lib/url";
 
 const sorted = [...posts].sort((a, b) => (a.date < b.date ? 1 : -1));
 const [featured, ...rest] = sorted;
@@ -24,7 +25,7 @@ const fmt = (d: string) =>
 
   <section class="border-t border-[color:var(--color-line)] py-16 md:py-20">
     <div class="container-wide">
-      <a href={`/blog/${featured.slug}`} class="group block rounded-3xl border border-[color:var(--color-line)] bg-[color:var(--color-ink-2)] p-8 hover:border-[color:var(--color-bone-dim)] md:p-12">
+      <a href={url(`/blog/${featured.slug}`)} class="group block rounded-3xl border border-[color:var(--color-line)] bg-[color:var(--color-ink-2)] p-8 hover:border-[color:var(--color-bone-dim)] md:p-12">
         <div class="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.18em] text-[color:var(--color-bone-dim)]">
           <span>Featured</span>
           <span class="text-[color:var(--color-mute)]">·</span>
@@ -51,7 +52,7 @@ const fmt = (d: string) =>
       <ul class="grid gap-px overflow-hidden rounded-3xl border border-[color:var(--color-line)] bg-[color:var(--color-line)] md:grid-cols-2">
         {rest.map((p) => (
           <li class="bg-[color:var(--color-ink-2)]">
-            <a href={`/blog/${p.slug}`} class="group flex h-full flex-col gap-5 p-8 md:p-10">
+            <a href={url(`/blog/${p.slug}`)} class="group flex h-full flex-col gap-5 p-8 md:p-10">
               <div class="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.18em] text-[color:var(--color-bone-dim)]">
                 <span>{p.category}</span>
                 <span class="text-[color:var(--color-mute)]">·</span>

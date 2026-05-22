@@ -1,4 +1,6 @@
 ---
+import { url } from "../lib/url";
+
 interface Props {
   id?: string;
   heading?: string;
@@ -12,6 +14,9 @@ const {
   sub = "Notes on AEO, SEO, paid and CRM from the people running the programs. No filler, no funnel.",
   variant = "card",
 } = Astro.props;
+
+const endpoint = import.meta.env.PUBLIC_NEWSLETTER_ENDPOINT || url("/api/subscribe");
+const isStatic = !!import.meta.env.PUBLIC_STATIC_BUILD;
 ---
 
 <section id={id} class={variant === "card" ? "py-24 md:py-32" : "py-12"}>
@@ -34,9 +39,10 @@ const {
 
         <form
           class="newsletter-form flex w-full flex-col gap-3"
-          action="/api/subscribe"
+          action={endpoint}
           method="post"
           novalidate
+          data-static={isStatic ? "true" : "false"}
         >
           <label class="sr-only" aria-hidden="true">
             Website
@@ -93,6 +99,8 @@ const {
       busy?.classList.toggle("inline-flex", b);
     };
 
+    const isStaticBuild = form.dataset.static === "true";
+
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
       const data = new FormData(form);
@@ -100,14 +108,19 @@ const {
       msg?.classList.add("hidden");
       try {
         const res = await fetch(form.action, { method: "POST", body: data, headers: { Accept: "application/json" } });
-        const json = await res.json().catch(() => ({}));
-        if (res.ok && json?.ok) {
+        let json: any = {};
+        try { json = await res.clone().json(); } catch { /* ignore */ }
+        const succeeded = res.ok && (json?.ok !== false);
+
+        if (succeeded) {
           form.reset();
-          show(json.message || "Subscribed — see you next month.", "ok");
+          show(json?.message || "Subscribed — see you next month.", "ok");
         } else if (json?.errors?.email) {
           show(json.errors.email, "err");
+        } else if (res.status === 404 && isStaticBuild) {
+          show("This static deployment isn't wired to a list. Set PUBLIC_NEWSLETTER_ENDPOINT at build time.", "err");
         } else {
-          show(json?.error || "Something went wrong. Try again.", "err");
+          show(json?.error || `Couldn't subscribe (${res.status}). Try again.`, "err");
         }
       } catch {
         show("Network blip. Try again.", "err");
