@@ -1,0 +1,17 @@
+{
+  "campaigns": [
+    {
+      "id": "xr-strategy-call-linkedin-2026",
+      "name": "xRecruiter Strategy Call - LinkedIn Social",
+      "url": "https://www.xrecruiter.io/strategy-call?utm_source=linkedin&utm_medium=social&utm_campaign=xr-services&utm_content=book-strategy-call",
+      "destination": "https://www.xrecruiter.io/strategy-call",
+      "utm": {
+        "source": "linkedin",
+        "medium": "social",
+        "campaign": "xr-services",
+        "content": "book-strategy-call"
+      },
+      "notes": "Reference link captured for the replication landing page CTA."
+    }
+  ]
+}
