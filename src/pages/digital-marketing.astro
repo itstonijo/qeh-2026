@@ -1,0 +1,47 @@
+---
+export const prerender = true;
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ServicePage from "../components/ServicePage.astro";
+---
+
+<BaseLayout
+  title="Digital marketing services — Covert. Sydney"
+  description="An integrated digital marketing program from a Sydney performance agency. SEO, paid media, content, CRM and strategy under one roof, measured on pipeline."
+>
+  <ServicePage
+    slug="digital-marketing"
+    eyebrow="Service · 01"
+    title="Digital marketing, run as one program."
+    lede="Most brands have an SEO agency, a paid agency, a content agency and a CRM agency — and pay them to argue with each other. We run all of it, on one P&L."
+    intro="A digital program is a system, not a pile of channels. We design and operate the system end-to-end — and own the result it produces."
+    pillars={[
+      {
+        title: "One funnel, one report.",
+        body: "Acquisition, conversion and lifecycle live in one model and one report. Every channel knows what it's responsible for.",
+      },
+      {
+        title: "Specialists, in one room.",
+        body: "Senior SEO, paid, content, CRM and analytics specialists, sitting together. The argument that used to happen between agencies becomes a conversation between teammates.",
+      },
+      {
+        title: "Measured against revenue.",
+        body: "Not impressions. Not engagement. Revenue and qualified pipeline, audited monthly, signed off quarterly.",
+      },
+    ]}
+    deliverables={[
+      "Quarterly performance and growth plan",
+      "Monthly senior review with the principals",
+      "Weekly channel sprints across SEO, paid, content and CRM",
+      "Always-on creative refresh on paid",
+      "Editorial calendar mapped to SEO and AEO opportunities",
+      "HubSpot CRM, lifecycle and revenue dashboards",
+      "Forecasting and quarterly board pack",
+    ]}
+    outcomes={[
+      { label: "Avg. organic growth", value: "+184%" },
+      { label: "Avg. paid ROAS", value: "5.6x" },
+      { label: "Avg. CPA reduction", value: "−38%" },
+      { label: "Client tenure", value: "3.4y" },
+    ]}
+  />
+</BaseLayout>

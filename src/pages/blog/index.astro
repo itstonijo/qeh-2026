@@ -1,0 +1,81 @@
+---
+export const prerender = true;
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageHero from "../../components/PageHero.astro";
+import NewsletterSignup from "../../components/NewsletterSignup.astro";
+import { posts } from "../../data/posts";
+import { url } from "../../lib/url";
+
+const sorted = [...posts].sort((a, b) => (a.date < b.date ? 1 : -1));
+const [featured, ...rest] = sorted;
+
+const fmt = (d: string) =>
+  new Date(d).toLocaleDateString("en-AU", { year: "numeric", month: "long", day: "numeric" });
+---
+
+<BaseLayout
+  title="Insights — Covert."
+  description="Insights from Covert. on SEO, AEO, paid media, content, CRM and digital strategy. Practical, honest, occasionally opinionated."
+>
+  <PageHero
+    eyebrow="Insights"
+    title="Notes from the work."
+    lede="What's actually moving the needle in 2026. AEO, SEO, paid media, content, CRM — written by the people running the programs."
+  />
+
+  <section class="border-t border-[color:var(--color-line)] py-16 md:py-20">
+    <div class="container-wide">
+      <a href={url(`/blog/${featured.slug}`)} class="group block rounded-3xl border border-[color:var(--color-line)] bg-[color:var(--color-ink-2)] p-8 hover:border-[color:var(--color-bone-dim)] md:p-12">
+        <div class="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.18em] text-[color:var(--color-bone-dim)]">
+          <span>Featured</span>
+          <span class="text-[color:var(--color-mute)]">·</span>
+          <span>{featured.category}</span>
+          <span class="text-[color:var(--color-mute)]">·</span>
+          <span>{fmt(featured.date)}</span>
+          <span class="text-[color:var(--color-mute)]">·</span>
+          <span>{featured.readTime}</span>
+        </div>
+        <h2 class="mt-6 max-w-4xl font-display text-4xl font-medium leading-[1.02] tracking-tight transition-colors group-hover:text-[color:var(--color-accent)] md:text-6xl">
+          {featured.title}
+        </h2>
+        <p class="mt-6 max-w-3xl text-[color:var(--color-bone-dim)] md:text-lg">{featured.excerpt}</p>
+        <p class="mt-8 inline-flex items-center gap-2 text-sm text-[color:var(--color-bone)] transition-colors group-hover:text-[color:var(--color-accent)]">
+          Read the piece
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </p>
+      </a>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20">
+    <div class="container-wide">
+      <ul class="grid gap-px overflow-hidden rounded-3xl border border-[color:var(--color-line)] bg-[color:var(--color-line)] md:grid-cols-2">
+        {rest.map((p) => (
+          <li class="bg-[color:var(--color-ink-2)]">
+            <a href={url(`/blog/${p.slug}`)} class="group flex h-full flex-col gap-5 p-8 md:p-10">
+              <div class="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.18em] text-[color:var(--color-bone-dim)]">
+                <span>{p.category}</span>
+                <span class="text-[color:var(--color-mute)]">·</span>
+                <span>{fmt(p.date)}</span>
+                <span class="text-[color:var(--color-mute)]">·</span>
+                <span>{p.readTime}</span>
+              </div>
+              <h3 class="font-display text-3xl font-medium tracking-tight transition-colors group-hover:text-[color:var(--color-accent)] md:text-4xl">
+                {p.title}
+              </h3>
+              <p class="text-[color:var(--color-bone-dim)]">{p.excerpt}</p>
+              <p class="mt-auto inline-flex items-center gap-2 text-sm text-[color:var(--color-bone)] transition-colors group-hover:text-[color:var(--color-accent)]">
+                Read piece →
+              </p>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <NewsletterSignup
+    heading="Send these to my inbox."
+    sub="One short email a month. Notes on AEO, SEO, paid and CRM from the people running the programs."
+  />
+</BaseLayout>

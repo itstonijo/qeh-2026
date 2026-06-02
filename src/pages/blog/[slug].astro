@@ -1,0 +1,62 @@
+---
+export const prerender = true;
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import CTAStrip from "../../components/CTAStrip.astro";
+import { posts } from "../../data/posts";
+import { url } from "../../lib/url";
+
+export function getStaticPaths() {
+  return posts.map((p) => ({ params: { slug: p.slug }, props: { post: p } }));
+}
+
+const { post } = Astro.props;
+const fmt = (d: string) =>
+  new Date(d).toLocaleDateString("en-AU", { year: "numeric", month: "long", day: "numeric" });
+
+const others = posts.filter((p) => p.slug !== post.slug).slice(0, 3);
+---
+
+<BaseLayout title={`${post.title} · Insights`} description={post.excerpt}>
+  <article class="pt-16 pb-16 md:pt-24 md:pb-24">
+    <div class="container-wide">
+      <a href={url("/blog")} class="link-underline font-mono text-xs uppercase tracking-[0.18em]">← All insights</a>
+
+      <div class="mt-12 flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.18em] text-[color:var(--color-bone-dim)]">
+        <span>{post.category}</span>
+        <span class="text-[color:var(--color-mute)]">·</span>
+        <span>{fmt(post.date)}</span>
+        <span class="text-[color:var(--color-mute)]">·</span>
+        <span>{post.readTime}</span>
+      </div>
+
+      <h1 class="mt-6 max-w-4xl font-display text-5xl font-semibold leading-[0.95] tracking-[-0.03em] md:text-[5rem]">
+        {post.title}
+      </h1>
+
+      <p class="mt-8 max-w-3xl text-xl text-[color:var(--color-bone-dim)] md:text-2xl">{post.excerpt}</p>
+
+      <div class="mt-16 max-w-3xl space-y-6 text-lg leading-relaxed text-[color:var(--color-bone)]">
+        {post.body.map((p) => <p>{p}</p>)}
+      </div>
+    </div>
+  </article>
+
+  <section class="border-t border-[color:var(--color-line)] py-20 md:py-24">
+    <div class="container-wide">
+      <p class="eyebrow">More from Covert.</p>
+      <ul class="mt-10 grid gap-6 md:grid-cols-3">
+        {others.map((p) => (
+          <li>
+            <a href={url(`/blog/${p.slug}`)} class="group block rounded-3xl border border-[color:var(--color-line)] bg-[color:var(--color-ink-2)] p-7 hover:border-[color:var(--color-bone-dim)]">
+              <p class="font-mono text-[10px] uppercase tracking-[0.18em] text-[color:var(--color-bone-dim)]">{p.category} · {p.readTime}</p>
+              <h3 class="mt-4 font-display text-2xl tracking-tight group-hover:text-[color:var(--color-accent)]">{p.title}</h3>
+              <p class="mt-3 text-sm text-[color:var(--color-bone-dim)]">{p.excerpt}</p>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <CTAStrip />
+</BaseLayout>

@@ -1,0 +1,47 @@
+---
+export const prerender = true;
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ServicePage from "../components/ServicePage.astro";
+---
+
+<BaseLayout
+  title="Web & app development — Covert. Sydney"
+  description="E-commerce, marketplaces and lead-gen platforms — engineered for Core Web Vitals, conversion and search."
+>
+  <ServicePage
+    slug="website-app-development"
+    eyebrow="Service · 05"
+    title="Sites that load, rank and sell."
+    lede="A digital program lives or dies on the platform underneath it. We build the platform."
+    intro="We engineer e-commerce, marketplace and lead-gen platforms with performance, conversion and search engineered in from the first wireframe. Not bolted on at launch minus two weeks."
+    pillars={[
+      {
+        title: "Performance, not posture.",
+        body: "Core Web Vitals as a non-negotiable. Edge rendering where it pays. Image and font budgets that we actually enforce.",
+      },
+      {
+        title: "Built for conversion.",
+        body: "Information architecture, content blocks and forms shaped by analytics, not opinions. CRO planned into the build, not after.",
+      },
+      {
+        title: "CMS that the team can drive.",
+        body: "Umbraco, headless CMS or composable — chosen on fit, not fashion. The marketing team can publish on Friday afternoon without phoning an engineer.",
+      },
+    ]}
+    deliverables={[
+      "Discovery, IA and conversion blueprint",
+      "Design system in Figma, shipped as code",
+      "Headless or Umbraco CMS implementation",
+      "E-commerce or marketplace platform build",
+      "Analytics, event tracking and consent",
+      "Core Web Vitals tuning and ongoing monitoring",
+      "Post-launch experimentation program",
+    ]}
+    outcomes={[
+      { label: "Median LCP", value: "1.4s" },
+      { label: "Conversion lift, post-rebuild", value: "+62%" },
+      { label: "Time to first deploy", value: "Day 14" },
+      { label: "Platforms shipped", value: "40+" },
+    ]}
+  />
+</BaseLayout>

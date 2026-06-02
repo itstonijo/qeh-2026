@@ -1,0 +1,28 @@
+---
+export const prerender = true;
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import ServicesGrid from "../components/ServicesGrid.astro";
+import WorkShowcase from "../components/WorkShowcase.astro";
+import Stats from "../components/Stats.astro";
+import Process from "../components/Process.astro";
+import Testimonial from "../components/Testimonial.astro";
+import CTAStrip from "../components/CTAStrip.astro";
+---
+
+<BaseLayout
+  title="Covert. — A performance-led digital agency in Sydney"
+  description="Covert is a Sydney digital agency delivering SEO, AEO, paid media, content, CRM and strategy that compounds. Performance you can defend in a boardroom."
+>
+  <Hero />
+  <ServicesGrid />
+  <WorkShowcase limit={5} />
+  <Stats />
+  <Process />
+  <Testimonial
+    body="Covert took our marketing from a line item to a P&L. We finally know what's working and we finally have a team that can scale it."
+    name="Founder"
+    role="Australian e-commerce client"
+  />
+  <CTAStrip />
+</BaseLayout>

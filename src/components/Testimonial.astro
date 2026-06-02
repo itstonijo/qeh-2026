@@ -1,0 +1,22 @@
+---
+interface Props {
+  body: string;
+  name: string;
+  role: string;
+}
+const { body, name, role } = Astro.props;
+---
+
+<section class="py-24 md:py-32">
+  <div class="container-wide">
+    <figure class="mx-auto max-w-4xl text-center">
+      <p class="eyebrow justify-center">Said about us</p>
+      <blockquote class="mt-8 font-display text-3xl font-medium leading-[1.1] tracking-tight md:text-5xl">
+        <span class="text-[color:var(--color-accent)]">"</span>{body}<span class="text-[color:var(--color-accent)]">"</span>
+      </blockquote>
+      <figcaption class="mt-8 font-mono text-xs uppercase tracking-[0.18em] text-[color:var(--color-bone-dim)]">
+        {name} · {role}
+      </figcaption>
+    </figure>
+  </div>
+</section>

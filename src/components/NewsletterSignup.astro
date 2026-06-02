@@ -1,0 +1,132 @@
+---
+import { url } from "../lib/url";
+
+interface Props {
+  id?: string;
+  heading?: string;
+  sub?: string;
+  variant?: "card" | "inline";
+}
+
+const {
+  id = "newsletter",
+  heading = "One short email a month.",
+  sub = "Notes on AEO, SEO, paid and CRM from the people running the programs. No filler, no funnel.",
+  variant = "card",
+} = Astro.props;
+
+const endpoint = import.meta.env.PUBLIC_NEWSLETTER_ENDPOINT || url("/api/subscribe");
+const isStatic = !!import.meta.env.PUBLIC_STATIC_BUILD;
+---
+
+<section id={id} class={variant === "card" ? "py-24 md:py-32" : "py-12"}>
+  <div class="container-wide">
+    <div class={[
+      "relative overflow-hidden",
+      variant === "card"
+        ? "rounded-3xl border border-[color:var(--color-line)] bg-[color:var(--color-ink-2)] p-10 md:p-16"
+        : "",
+    ].join(" ")}>
+      {variant === "card" && (
+        <div aria-hidden="true" class="pointer-events-none absolute -top-32 -right-32 h-72 w-72 rounded-full bg-[color:var(--color-accent)]/15 blur-3xl"></div>
+      )}
+      <div class="relative grid items-end gap-10 md:grid-cols-[1.4fr_1fr]">
+        <div>
+          <p class="eyebrow">Subscribe</p>
+          <h2 class="mt-6 font-display text-4xl font-medium leading-[0.98] tracking-tight md:text-6xl">{heading}</h2>
+          <p class="mt-5 max-w-xl text-[color:var(--color-bone-dim)]">{sub}</p>
+        </div>
+
+        <form
+          class="newsletter-form flex w-full flex-col gap-3"
+          action={endpoint}
+          method="post"
+          novalidate
+          data-static={isStatic ? "true" : "false"}
+        >
+          <label class="sr-only" aria-hidden="true">
+            Website
+            <input type="text" name="website" tabindex="-1" autocomplete="off" />
+          </label>
+
+          <label class="flex flex-col gap-2">
+            <span class="font-mono text-[11px] uppercase tracking-[0.18em] text-[color:var(--color-bone-dim)]">Email</span>
+            <input
+              type="email"
+              name="email"
+              required
+              autocomplete="email"
+              placeholder="you@company.com"
+              class="w-full rounded-full border border-[color:var(--color-line)] bg-[color:var(--color-ink)] px-5 py-3 text-base text-[color:var(--color-bone)] outline-none placeholder:text-[color:var(--color-mute)] focus:border-[color:var(--color-accent)]"
+            />
+          </label>
+
+          <button type="submit" class="btn-primary justify-center" data-submit>
+            <span data-submit-idle class="inline-flex items-center gap-2">
+              Subscribe
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </span>
+            <span data-submit-busy class="hidden items-center gap-2">
+              <svg class="animate-spin" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 12a9 9 0 1 1-3.5-7.1"/></svg>
+              Subscribing…
+            </span>
+          </button>
+
+          <p role="status" aria-live="polite" data-form-message class="hidden text-sm"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  for (const form of document.querySelectorAll<HTMLFormElement>("form.newsletter-form")) {
+    const msg = form.querySelector<HTMLParagraphElement>("[data-form-message]");
+    const submit = form.querySelector<HTMLButtonElement>("[data-submit]");
+    const idle = form.querySelector<HTMLSpanElement>("[data-submit-idle]");
+    const busy = form.querySelector<HTMLSpanElement>("[data-submit-busy]");
+
+    const show = (text: string, tone: "ok" | "err") => {
+      if (!msg) return;
+      msg.textContent = text;
+      msg.classList.remove("hidden");
+      msg.style.color = tone === "ok" ? "var(--color-accent)" : "#f87171";
+    };
+    const setBusy = (b: boolean) => {
+      if (submit) submit.disabled = b;
+      idle?.classList.toggle("hidden", b);
+      busy?.classList.toggle("hidden", !b);
+      busy?.classList.toggle("inline-flex", b);
+    };
+
+    const isStaticBuild = form.dataset.static === "true";
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const data = new FormData(form);
+      setBusy(true);
+      msg?.classList.add("hidden");
+      try {
+        const res = await fetch(form.action, { method: "POST", body: data, headers: { Accept: "application/json" } });
+        let json: any = {};
+        try { json = await res.clone().json(); } catch { /* ignore */ }
+        const succeeded = res.ok && (json?.ok !== false);
+
+        if (succeeded) {
+          form.reset();
+          show(json?.message || "Subscribed — see you next month.", "ok");
+        } else if (json?.errors?.email) {
+          show(json.errors.email, "err");
+        } else if (res.status === 404 && isStaticBuild) {
+          show("This static deployment isn't wired to a list. Set PUBLIC_NEWSLETTER_ENDPOINT at build time.", "err");
+        } else {
+          show(json?.error || `Couldn't subscribe (${res.status}). Try again.`, "err");
+        }
+      } catch {
+        show("Network blip. Try again.", "err");
+      } finally {
+        setBusy(false);
+      }
+    });
+  }
+</script>

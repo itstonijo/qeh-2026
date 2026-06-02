@@ -1,0 +1,114 @@
+---
+import PageHero from "./PageHero.astro";
+import CTAStrip from "./CTAStrip.astro";
+import { services } from "../data/services";
+import { url } from "../lib/url";
+
+interface Props {
+  slug: string;
+  eyebrow: string;
+  title: string;
+  lede: string;
+  intro: string;
+  pillars: { title: string; body: string }[];
+  deliverables: string[];
+  outcomes: { label: string; value: string }[];
+}
+
+const { slug, eyebrow, title, lede, intro, pillars, deliverables, outcomes } = Astro.props;
+const current = services.find((s) => s.slug === slug);
+const others = services.filter((s) => s.slug !== slug);
+---
+
+<PageHero eyebrow={eyebrow} title={title} lede={lede} />
+
+<section class="border-t border-[color:var(--color-line)] py-24 md:py-32">
+  <div class="container-wide grid gap-16 md:grid-cols-[1fr_1.6fr]">
+    <div>
+      <p class="eyebrow">The thesis</p>
+      <h2 class="mt-6 font-display text-4xl font-medium leading-tight tracking-tight md:text-5xl">{intro}</h2>
+    </div>
+    <div>
+      <p class="eyebrow">Capabilities</p>
+      <ul class="mt-6 flex flex-wrap gap-2">
+        {current?.capabilities.map((c) => (
+          <li class="rounded-full border border-[color:var(--color-line)] px-4 py-2 text-sm text-[color:var(--color-bone-dim)]">{c}</li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="border-t border-[color:var(--color-line)] py-24 md:py-32">
+  <div class="container-wide">
+    <p class="eyebrow">Pillars</p>
+    <h2 class="mt-6 font-display text-5xl font-medium leading-[0.95] tracking-tight md:text-7xl">What this service is, in three pieces.</h2>
+
+    <div class="mt-16 grid gap-px overflow-hidden rounded-3xl border border-[color:var(--color-line)] bg-[color:var(--color-line)] md:grid-cols-3">
+      {pillars.map((p, i) => (
+        <article class="flex flex-col gap-4 bg-[color:var(--color-ink-2)] p-8">
+          <span class="font-mono text-xs text-[color:var(--color-accent)]">{String(i + 1).padStart(2, "0")}</span>
+          <h3 class="font-display text-2xl tracking-tight md:text-3xl">{p.title}</h3>
+          <p class="text-sm text-[color:var(--color-bone-dim)]">{p.body}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section class="border-t border-[color:var(--color-line)] py-24 md:py-32">
+  <div class="container-wide grid gap-16 md:grid-cols-[1fr_1.6fr]">
+    <div>
+      <p class="eyebrow">Deliverables</p>
+      <h2 class="mt-6 font-display text-4xl font-medium leading-tight tracking-tight md:text-5xl">
+        What shows up in your inbox each quarter.
+      </h2>
+    </div>
+    <ul class="divide-y divide-[color:var(--color-line)] border-y border-[color:var(--color-line)]">
+      {deliverables.map((d, i) => (
+        <li class="flex items-start gap-6 py-5">
+          <span class="font-mono text-xs text-[color:var(--color-mute)]">{String(i + 1).padStart(2, "0")}</span>
+          <p class="text-[color:var(--color-bone)]">{d}</p>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<section class="border-t border-[color:var(--color-line)] py-24 md:py-32">
+  <div class="container-wide">
+    <p class="eyebrow">Outcomes</p>
+    <h2 class="mt-6 font-display text-5xl font-medium leading-[0.95] tracking-tight md:text-7xl">What good looks like.</h2>
+
+    <dl class="mt-16 grid grid-cols-2 gap-px overflow-hidden rounded-3xl border border-[color:var(--color-line)] bg-[color:var(--color-line)] md:grid-cols-4">
+      {outcomes.map((o) => (
+        <div class="bg-[color:var(--color-ink-2)] p-8">
+          <dt class="font-mono text-[11px] uppercase tracking-[0.18em] text-[color:var(--color-bone-dim)]">{o.label}</dt>
+          <dd class="mt-6 font-display text-5xl font-semibold tracking-tight md:text-6xl">{o.value}</dd>
+        </div>
+      ))}
+    </dl>
+  </div>
+</section>
+
+<section class="border-t border-[color:var(--color-line)] py-24 md:py-32">
+  <div class="container-wide">
+    <p class="eyebrow">Other services</p>
+    <h2 class="mt-6 font-display text-5xl font-medium leading-[0.95] tracking-tight md:text-7xl">Pairs well with.</h2>
+
+    <ul class="mt-12 divide-y divide-[color:var(--color-line)] border-y border-[color:var(--color-line)]">
+      {others.map((s) => (
+        <li>
+          <a href={url(s.href)} class="flex flex-col gap-3 py-6 md:flex-row md:items-center md:gap-10">
+            <span class="font-mono text-xs text-[color:var(--color-mute)] md:w-16">{s.number}</span>
+            <h3 class="flex-1 font-display text-3xl tracking-tight hover:text-[color:var(--color-accent)] md:text-4xl">{s.title}</h3>
+            <p class="hidden max-w-md text-sm text-[color:var(--color-bone-dim)] md:block">{s.short}</p>
+            <span class="text-[color:var(--color-mute)]">→</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<CTAStrip eyebrow={`Start with ${current?.title ?? "us"}`} />

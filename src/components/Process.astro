@@ -1,0 +1,50 @@
+---
+const steps = [
+  {
+    n: "01",
+    title: "Diagnose",
+    body: "We start with the revenue model and work backwards. Audits, audience research and a clear, defensible thesis before any media is spent.",
+  },
+  {
+    n: "02",
+    title: "Plan",
+    body: "Channel mix, content engine, CRM model and measurement plan — sequenced into quarters and signed off against KPIs you can take to the board.",
+  },
+  {
+    n: "03",
+    title: "Ship",
+    body: "Always-on execution across SEO, AEO, paid, content and lifecycle. Weekly cadence, monthly reviews, quarterly resets.",
+  },
+  {
+    n: "04",
+    title: "Compound",
+    body: "Each program feeds the next. Editorial earns search rankings. Search rankings cheapen paid. Paid funds the next content slate. Repeat.",
+  },
+];
+---
+
+<section class="border-t border-[color:var(--color-line)] py-24 md:py-32">
+  <div class="container-wide">
+    <div class="grid gap-10 md:grid-cols-[1fr_1.6fr] md:items-end">
+      <div>
+        <p class="eyebrow">How we work</p>
+        <h2 class="mt-6 font-display text-5xl font-medium leading-[0.95] tracking-tight md:text-7xl">
+          A boring operating <br /><span class="text-[color:var(--color-mute)]">cadence.</span>
+        </h2>
+      </div>
+      <p class="text-lg text-[color:var(--color-bone-dim)]">
+        The work that compounds isn't dramatic. It's the same disciplined loop, run every week, for years.
+      </p>
+    </div>
+
+    <ol class="mt-16 grid gap-px overflow-hidden rounded-3xl border border-[color:var(--color-line)] bg-[color:var(--color-line)] md:grid-cols-4">
+      {steps.map((s) => (
+        <li class="flex flex-col gap-4 bg-[color:var(--color-ink-2)] p-8">
+          <span class="font-mono text-xs text-[color:var(--color-accent)]">{s.n}</span>
+          <h3 class="font-display text-2xl tracking-tight md:text-3xl">{s.title}</h3>
+          <p class="text-sm text-[color:var(--color-bone-dim)]">{s.body}</p>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>

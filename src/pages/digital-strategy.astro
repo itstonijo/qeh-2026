@@ -1,0 +1,47 @@
+---
+export const prerender = true;
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ServicePage from "../components/ServicePage.astro";
+---
+
+<BaseLayout
+  title="Digital strategy — Covert. Sydney"
+  description="A defensible digital strategy from a Sydney performance agency. Research, audience work, channel mix and quarterly roadmaps you can defend to a board."
+>
+  <ServicePage
+    slug="digital-strategy"
+    eyebrow="Service · 04"
+    title="A thesis before any media."
+    lede="We won't run paid until the strategy is signed off. A spreadsheet is cheaper than a quarter of wasted spend."
+    intro="Strategy at Covert isn't a thirty-slide deck. It's a model, a roadmap and a measurement plan — built tight enough for the CFO and clear enough for the marketing team to execute."
+    pillars={[
+      {
+        title: "Research, not assumption.",
+        body: "Category mapping, competitive deconstruction, audience interviews and search-demand analysis. We argue with data, not vibes.",
+      },
+      {
+        title: "Channel mix modelled, not guessed.",
+        body: "A model that explains the role of each channel in the funnel, the unit economics of each, and the sequence that compounds.",
+      },
+      {
+        title: "Roadmaps a board can sign off.",
+        body: "Quarter-by-quarter milestones, with KPIs and budgets you can take to the executive team without translating.",
+      },
+    ]}
+    deliverables={[
+      "Category and competitor map",
+      "Audience and jobs-to-be-done study",
+      "Channel mix model and unit economics",
+      "12-month growth roadmap, sequenced into quarters",
+      "Brand messaging framework",
+      "KPI tree and measurement plan",
+      "Quarterly board pack",
+    ]}
+    outcomes={[
+      { label: "Strategy → execution lag", value: "< 30d" },
+      { label: "Forecast accuracy, Y1", value: "92%" },
+      { label: "Channel mix shifts / yr", value: "1.4" },
+      { label: "Strategies still in market", value: "All" },
+    ]}
+  />
+</BaseLayout>

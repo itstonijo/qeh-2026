@@ -1,0 +1,47 @@
+---
+export const prerender = true;
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ServicePage from "../components/ServicePage.astro";
+---
+
+<BaseLayout
+  title="SEO & AEO agency Sydney — Covert."
+  description="SEO and AEO from a Sydney performance agency. Technical foundations, editorial depth, entity authority and AI search visibility."
+>
+  <ServicePage
+    slug="seo-agency-sydney"
+    eyebrow="Service · 02"
+    title="Be the answer. In Google. In AI."
+    lede="Search didn't die. It just got two surfaces — classic SERPs and AI-generated answers. We're building for both."
+    intro="AEO is not SEO with a new acronym. The ranking model is different, the citation rules are different, and the moat is different. We build programs that win in both worlds."
+    pillars={[
+      {
+        title: "Technical foundations, done quietly.",
+        body: "Crawl, render, indexation, internal linking, Core Web Vitals. The unsexy infrastructure that decides whether anything else you do is even seen.",
+      },
+      {
+        title: "Editorial that earns citation.",
+        body: "Long-form, original-data, named-expert content — the kind of page that the AI answer panel actually pulls from, and that humans share.",
+      },
+      {
+        title: "Entity and AEO depth.",
+        body: "Knowledge-graph optimisation, structured data, Wikipedia and Reddit presence, podcast and PR distribution. The places AI search is grounded.",
+      },
+    ]}
+    deliverables={[
+      "Technical SEO audit and remediation plan",
+      "Topic strategy and editorial calendar",
+      "Programmatic SEO architecture where it applies",
+      "Original-data content and named-expert long-form",
+      "Schema, structured data and entity work",
+      "Off-site distribution: PR, Reddit, Wikipedia, podcast outreach",
+      "Monthly visibility report, classic search + AI answer panels",
+    ]}
+    outcomes={[
+      { label: "Non-branded organic", value: "+421%" },
+      { label: "Top-3 rankings", value: "612" },
+      { label: "AI citations / mo", value: "188" },
+      { label: "Lead form lift", value: "+148%" },
+    ]}
+  />
+</BaseLayout>

@@ -1,0 +1,28 @@
+---
+import { stats } from "../data/clients";
+---
+
+<section class="py-24 md:py-32">
+  <div class="container-wide">
+    <div class="grid gap-10 md:grid-cols-[1fr_1.6fr] md:items-end">
+      <div>
+        <p class="eyebrow">By the numbers</p>
+        <h2 class="mt-6 font-display text-5xl font-medium leading-[0.95] tracking-tight md:text-7xl">
+          Performance, <br /><span class="text-[color:var(--color-mute)]">audited.</span>
+        </h2>
+      </div>
+      <p class="text-lg text-[color:var(--color-bone-dim)]">
+        We retire decks of vanity metrics every quarter. These are the numbers we'll actually defend in your boardroom.
+      </p>
+    </div>
+
+    <dl class="mt-16 grid grid-cols-2 gap-px overflow-hidden rounded-3xl border border-[color:var(--color-line)] bg-[color:var(--color-line)] md:grid-cols-4">
+      {stats.map((s) => (
+        <div class="bg-[color:var(--color-ink-2)] p-8">
+          <dt class="font-mono text-[11px] uppercase tracking-[0.18em] text-[color:var(--color-bone-dim)]">{s.label}</dt>
+          <dd class="mt-6 font-display text-5xl font-semibold tracking-tight text-[color:var(--color-bone)] md:text-6xl">{s.value}</dd>
+        </div>
+      ))}
+    </dl>
+  </div>
+</section>

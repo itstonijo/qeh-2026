@@ -1,0 +1,20 @@
+---
+export const prerender = true;
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageHero from "../../components/PageHero.astro";
+import WorkShowcase from "../../components/WorkShowcase.astro";
+import CTAStrip from "../../components/CTAStrip.astro";
+---
+
+<BaseLayout
+  title="Work · Covert. — Selected digital case studies"
+  description="Selected case studies from Covert. — luxury appliances, property, beauty, gaming and global e-commerce. SEO, AEO, paid, content, CRM and build."
+>
+  <PageHero
+    eyebrow="Work"
+    title="Programs we're allowed to talk about."
+    lede="A short selection of the work we've done across Australia, the UK, the US and Singapore. Each one is a multi-year program — measured against pipeline, not impressions."
+  />
+  <WorkShowcase heading="Case studies." eyebrow="Selected work" showCTA={false} />
+  <CTAStrip />
+</BaseLayout>

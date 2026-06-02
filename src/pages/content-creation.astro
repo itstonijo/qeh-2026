@@ -1,0 +1,47 @@
+---
+export const prerender = true;
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ServicePage from "../components/ServicePage.astro";
+---
+
+<BaseLayout
+  title="Content creation — Covert. Sydney"
+  description="Editorial, video and social content built for SEO, AEO and the way real people read in 2026."
+>
+  <ServicePage
+    slug="content-creation"
+    eyebrow="Service · 03"
+    title="Editorial that ranks. Video that converts."
+    lede="The thin-content era is over. We make the kind of pages that get cited by AI answer panels and shared by humans."
+    intro="Content has quietly become the most defensible part of a digital program. Real expertise, real data and real opinions earn rankings, citations and trust — at a scale paid media can't buy."
+    pillars={[
+      {
+        title: "Editorial-first thinking.",
+        body: "We brief and edit like a magazine. Named experts, original data, a point of view. The work reads — and ranks — like journalism.",
+      },
+      {
+        title: "Video built for the platform.",
+        body: "Short-form cut for TikTok and Reels. Long-form for YouTube and proposals. Same brand, native to each surface.",
+      },
+      {
+        title: "Production that doesn't bottleneck.",
+        body: "An in-house photography and video team means a campaign idea on Monday is shot by Friday. Speed is part of the work.",
+      },
+    ]}
+    deliverables={[
+      "Quarterly editorial plan tied to SEO and AEO",
+      "Long-form articles, guides and original research",
+      "Short-form social and TikTok-native video",
+      "Studio and on-location photography",
+      "Newsletter and lifecycle content",
+      "PR-grade landing pages",
+      "Editorial style guide and AEO playbook",
+    ]}
+    outcomes={[
+      { label: "Avg. articles / mo", value: "12" },
+      { label: "Video output / mo", value: "30+" },
+      { label: "AI citation share", value: "+260%" },
+      { label: "Organic share of traffic", value: "62%" },
+    ]}
+  />
+</BaseLayout>

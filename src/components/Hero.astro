@@ -1,0 +1,59 @@
+---
+import { clients } from "../data/clients";
+import { url } from "../lib/url";
+---
+
+<section class="relative pt-16 pb-24 md:pt-24 md:pb-32">
+  <div class="container-wide">
+    <p class="eyebrow rise rise-1">A Sydney digital agency · est. 2019</p>
+
+    <h1 class="rise rise-2 mt-6 max-w-[18ch] font-display text-[12vw] font-semibold leading-[0.92] tracking-[-0.035em] md:text-[5.5rem] lg:text-[7rem] xl:text-[8.5rem]">
+      Marketing that
+      <span class="relative inline-block">
+        <span class="relative z-10">compounds</span>
+        <span aria-hidden="true" class="absolute inset-x-0 bottom-1.5 -z-0 h-3 bg-[color:var(--color-accent)]/80"></span>
+      </span><span class="text-[color:var(--color-mute)]">,</span>
+      <span class="text-[color:var(--color-mute)]">not campaigns that fade.</span>
+    </h1>
+
+    <div class="mt-14 grid items-end gap-10 border-t border-[color:var(--color-line)] pt-10 md:grid-cols-[1.3fr_1fr]">
+      <div class="rise rise-3 flex flex-wrap items-center gap-3">
+        <a href={url("/work")} class="btn-primary">
+          See the work
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+        <a href={url("/digital-marketing")} class="btn-ghost">What we do</a>
+        <p class="ml-2 max-w-md text-base text-[color:var(--color-bone-dim)] md:text-lg">
+          Covert. is a Surry Hills digital agency running SEO, AEO, paid media, content, CRM and strategy as one program — measured on pipeline, not impressions.
+        </p>
+      </div>
+
+      <dl class="rise rise-4 grid grid-cols-3 gap-6">
+        <div>
+          <dt class="font-mono text-[10px] uppercase tracking-[0.18em] text-[color:var(--color-mute)]">Founded</dt>
+          <dd class="mt-2 font-display text-2xl">2019</dd>
+        </div>
+        <div>
+          <dt class="font-mono text-[10px] uppercase tracking-[0.18em] text-[color:var(--color-mute)]">Clients</dt>
+          <dd class="mt-2 font-display text-2xl">AU · UK · US · SG</dd>
+        </div>
+        <div>
+          <dt class="font-mono text-[10px] uppercase tracking-[0.18em] text-[color:var(--color-mute)]">Model</dt>
+          <dd class="mt-2 font-display text-2xl">Retainer + scope</dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+
+  <!-- Client marquee -->
+  <div class="mt-20 overflow-hidden border-y border-[color:var(--color-line)] py-6">
+    <div class="marquee-track flex items-center gap-12 whitespace-nowrap">
+      {[...clients, ...clients].map((c) => (
+        <span class="font-display text-2xl font-medium text-[color:var(--color-bone-dim)]">
+          {c}
+          <span class="ml-12 text-[color:var(--color-line)]">/</span>
+        </span>
+      ))}
+    </div>
+  </div>
+</section>
