@@ -12,6 +12,21 @@
         "content": "book-strategy-call"
       },
       "notes": "Reference link captured for the replication landing page CTA."
+    },
+    {
+      "id": "cao-partners-ig-paid-2026",
+      "name": "CAO Partners - Instagram Paid Ad",
+      "url": "https://caopartners.com.au/?utm_medium=paid&utm_source=ig&utm_campaign=120244091663840253&utm_content=120244091664260253&utm_term=120244091664090253&utm_id=120244091663840253",
+      "destination": "https://caopartners.com.au/",
+      "utm": {
+        "source": "ig",
+        "medium": "paid",
+        "campaign": "120244091663840253",
+        "content": "120244091664260253",
+        "term": "120244091664090253",
+        "id": "120244091663840253"
+      },
+      "notes": "Source ad (Meta/Instagram) for the Chief Agent Officer service this site replicates. fbclid stripped from the logged URL."
     }
   ]
 }
