@@ -18,6 +18,7 @@ clear my inbox"*.
 | `sales-call-scorer` | Scores call transcripts against a fixed rubric and logs results | (none — works on transcripts you provide; Drive optional) |
 | `ops-automator` | Connects and automates across your other apps (CRM, accounting, Slack…) | Zapier |
 | `marketing-seo` | Plans content, writes optimised copy, maintains on-page SEO & UTM tracking | (none required; web + repo) |
+| `linkedin-social` | Interviews you on what to say, drafts high-engagement posts, publishes on approval | Zapier (LinkedIn) |
 
 ## How to run them
 
@@ -31,6 +32,7 @@ clear my inbox"*.
    - *"Score this call transcript with sales-call-scorer."* (paste or point to the transcript)
    - *"Use ops-automator to push new CRM deals into our accounting tool."*
    - *"Have marketing-seo audit index.html and improve the on-page SEO."*
+   - *"Use linkedin-social to write my next post."* (it asks what you want, drafts, posts on approval)
 3. **Review before send.** Every agent is set up to **draft, not send** by default for anything
    outbound (emails, invites, posts). You approve before it goes out. Loosen this only once you
    trust a given workflow.
@@ -42,6 +44,7 @@ clear my inbox"*.
 - `.claude/agents/sales-call-scorer.md`
 - `.claude/agents/ops-automator.md`
 - `.claude/agents/marketing-seo.md`
+- `.claude/agents/linkedin-social.md`
 - `agents/sales-call-rubric.md` — the scoring rubric the sales agent uses
 - `agents/seo-checklist.md` — the on-page SEO checklist the marketing agent works from
 
