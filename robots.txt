@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://qeh-2026.example/sitemap.xml
