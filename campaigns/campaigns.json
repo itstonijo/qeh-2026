@@ -57,13 +57,13 @@
         "email": "email",
         "blog": "blog"
       },
-      "note": "DESTINATION_URL resolves to each brand's landing page in this repo (/ironside/ and /ai-systems-setup/). Channel, brand and CTA drive the source/medium/campaign/content tags below."
+      "note": "DESTINATION_URL resolves to each brand's live destination: Ironside to https://ironsideresources.com.au, AI Systems Setup to /ai-systems-setup/. Channel, brand and CTA drive the source/medium/campaign/content tags below."
     },
     "brands": [
       {
         "id": "ironside",
         "name": "Ironside",
-        "destinationUrl": "/ironside/",
+        "destinationUrl": "https://ironsideresources.com.au",
         "voice": "Recruitment focused. Public posts use sparing, purposeful emoji.",
         "channels": [
           {
@@ -71,49 +71,49 @@
             "cta": "Soft and human, e.g. a refer-a-veteran ask",
             "tone": "Soft, human",
             "utm": { "source": "tiktok", "medium": "social", "campaign": "ironside", "content": "soft-refer" },
-            "trackingUrl": "/ironside/?utm_source=tiktok&utm_medium=social&utm_campaign=ironside&utm_content=soft-refer"
+            "trackingUrl": "https://ironsideresources.com.au/?utm_source=tiktok&utm_medium=social&utm_campaign=ironside&utm_content=soft-refer"
           },
           {
             "channel": "instagram",
             "cta": "Warm and people first: refer, apply or DM",
             "tone": "Warm, people first",
             "utm": { "source": "instagram", "medium": "social", "campaign": "ironside", "content": "refer-apply-dm" },
-            "trackingUrl": "/ironside/?utm_source=instagram&utm_medium=social&utm_campaign=ironside&utm_content=refer-apply-dm"
+            "trackingUrl": "https://ironsideresources.com.au/?utm_source=instagram&utm_medium=social&utm_campaign=ironside&utm_content=refer-apply-dm"
           },
           {
             "channel": "youtube",
             "cta": "Subscribe plus link to current roles",
             "tone": "Considered, informative",
             "utm": { "source": "youtube", "medium": "social", "campaign": "ironside", "content": "subscribe-roles" },
-            "trackingUrl": "/ironside/?utm_source=youtube&utm_medium=social&utm_campaign=ironside&utm_content=subscribe-roles"
+            "trackingUrl": "https://ironsideresources.com.au/?utm_source=youtube&utm_medium=social&utm_campaign=ironside&utm_content=subscribe-roles"
           },
           {
             "channel": "x",
             "cta": "Link to a role or a soft refer ask",
             "tone": "Direct, concise",
             "utm": { "source": "x", "medium": "social", "campaign": "ironside", "content": "role-or-refer" },
-            "trackingUrl": "/ironside/?utm_source=x&utm_medium=social&utm_campaign=ironside&utm_content=role-or-refer"
+            "trackingUrl": "https://ironsideresources.com.au/?utm_source=x&utm_medium=social&utm_campaign=ironside&utm_content=role-or-refer"
           },
           {
             "channel": "linkedin",
             "cta": "Recruitment CTA fine: roles, referrals or a confidential chat",
             "tone": "Professional, recruitment focused",
             "utm": { "source": "linkedin", "medium": "social", "campaign": "ironside", "content": "roles-referrals-chat" },
-            "trackingUrl": "/ironside/?utm_source=linkedin&utm_medium=social&utm_campaign=ironside&utm_content=roles-referrals-chat"
+            "trackingUrl": "https://ironsideresources.com.au/?utm_source=linkedin&utm_medium=social&utm_campaign=ironside&utm_content=roles-referrals-chat"
           },
           {
             "channel": "email",
             "cta": "One clear CTA",
             "tone": "Warm and loose, contractions, short uneven sentences, react before business",
             "utm": { "source": "email", "medium": "email", "campaign": "ironside", "content": "single-cta" },
-            "trackingUrl": "/ironside/?utm_source=email&utm_medium=email&utm_campaign=ironside&utm_content=single-cta"
+            "trackingUrl": "https://ironsideresources.com.au/?utm_source=email&utm_medium=email&utm_campaign=ironside&utm_content=single-cta"
           },
           {
             "channel": "blog",
             "cta": "One next step in the close",
             "tone": "Considered, informative",
             "utm": { "source": "blog", "medium": "blog", "campaign": "ironside", "content": "next-step" },
-            "trackingUrl": "/ironside/?utm_source=blog&utm_medium=blog&utm_campaign=ironside&utm_content=next-step"
+            "trackingUrl": "https://ironsideresources.com.au/?utm_source=blog&utm_medium=blog&utm_campaign=ironside&utm_content=next-step"
           }
         ]
       },
