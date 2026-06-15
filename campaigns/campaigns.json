@@ -12,6 +12,169 @@
         "content": "book-strategy-call"
       },
       "notes": "Reference link captured for the replication landing page CTA."
+    },
+    {
+      "id": "content360-lifetime-facebook-2026",
+      "name": "Content360 Lifetime Deal - Facebook Ads (Scaling CBO)",
+      "url": "https://get.content360.io/lifetime-page-3411?utm_source=facebook&utm_medium=ads&utm_campaign=Scaling+CBO+1+-+5/2/26+-+C360&utm_content=Scaling+CBO+Adset+1&utm_term=Dom+Static+72&campaign_id=120244040576760162&adset_id=120244040576780162&ad_id=120247025739340162&utm_id=120244040576760162",
+      "destination": "https://get.content360.io/lifetime-page-3411",
+      "utm": {
+        "source": "facebook",
+        "medium": "ads",
+        "campaign": "Scaling CBO 1 - 5/2/26 - C360",
+        "content": "Scaling CBO Adset 1",
+        "term": "Dom Static 72",
+        "id": "120244040576760162"
+      },
+      "meta_ads": {
+        "campaign_id": "120244040576760162",
+        "adset_id": "120244040576780162",
+        "ad_id": "120247025739340162"
+      },
+      "notes": "Live Meta lifetime-deal campaign for Content360, the content creation and scheduling tool both brands are managed from. Per-click fbclid stripped from the stored link since it is not reusable."
     }
-  ]
+  ],
+  "contentWorkflow": {
+    "source": "https://claude.ai/public/artifacts/0403f4ea-da47-415c-8d3c-833f25863c7b",
+    "description": "Multi-channel content generation spec. Drafts are returned as per-platform JSON. Wired into this log so every channel ships with a consistent UTM-tagged tracking link.",
+    "conventions": {
+      "spelling": "en-AU",
+      "dashes": false,
+      "hookRule": "Front load the hook. Whatever shows before the platform fold must do the work on its own."
+    },
+    "utm": {
+      "template": "{{DESTINATION_URL}}?utm_source={source}&utm_medium={medium}&utm_campaign={campaign}&utm_content={content}",
+      "campaignByBrand": {
+        "ironside": "ironside",
+        "ai-systems-setup": "ai-systems-setup"
+      },
+      "mediumByChannel": {
+        "tiktok": "social",
+        "instagram": "social",
+        "youtube": "social",
+        "x": "social",
+        "linkedin": "social",
+        "email": "email",
+        "blog": "blog"
+      },
+      "note": "DESTINATION_URL resolves to each brand's live destination: Ironside to https://ironsideresources.com.au, AI Systems Setup to /ai-systems-setup/. Channel, brand and CTA drive the source/medium/campaign/content tags below."
+    },
+    "brands": [
+      {
+        "id": "ironside",
+        "name": "Ironside",
+        "destinationUrl": "https://ironsideresources.com.au",
+        "voice": "Recruitment focused. Public posts use sparing, purposeful emoji.",
+        "channels": [
+          {
+            "channel": "tiktok",
+            "cta": "Soft and human, e.g. a refer-a-veteran ask",
+            "tone": "Soft, human",
+            "utm": { "source": "tiktok", "medium": "social", "campaign": "ironside", "content": "soft-refer" },
+            "trackingUrl": "https://ironsideresources.com.au/?utm_source=tiktok&utm_medium=social&utm_campaign=ironside&utm_content=soft-refer"
+          },
+          {
+            "channel": "instagram",
+            "cta": "Warm and people first: refer, apply or DM",
+            "tone": "Warm, people first",
+            "utm": { "source": "instagram", "medium": "social", "campaign": "ironside", "content": "refer-apply-dm" },
+            "trackingUrl": "https://ironsideresources.com.au/?utm_source=instagram&utm_medium=social&utm_campaign=ironside&utm_content=refer-apply-dm"
+          },
+          {
+            "channel": "youtube",
+            "cta": "Subscribe plus link to current roles",
+            "tone": "Considered, informative",
+            "utm": { "source": "youtube", "medium": "social", "campaign": "ironside", "content": "subscribe-roles" },
+            "trackingUrl": "https://ironsideresources.com.au/?utm_source=youtube&utm_medium=social&utm_campaign=ironside&utm_content=subscribe-roles"
+          },
+          {
+            "channel": "x",
+            "cta": "Link to a role or a soft refer ask",
+            "tone": "Direct, concise",
+            "utm": { "source": "x", "medium": "social", "campaign": "ironside", "content": "role-or-refer" },
+            "trackingUrl": "https://ironsideresources.com.au/?utm_source=x&utm_medium=social&utm_campaign=ironside&utm_content=role-or-refer"
+          },
+          {
+            "channel": "linkedin",
+            "cta": "Recruitment CTA fine: roles, referrals or a confidential chat",
+            "tone": "Professional, recruitment focused",
+            "utm": { "source": "linkedin", "medium": "social", "campaign": "ironside", "content": "roles-referrals-chat" },
+            "trackingUrl": "https://ironsideresources.com.au/?utm_source=linkedin&utm_medium=social&utm_campaign=ironside&utm_content=roles-referrals-chat"
+          },
+          {
+            "channel": "email",
+            "cta": "One clear CTA",
+            "tone": "Warm and loose, contractions, short uneven sentences, react before business",
+            "utm": { "source": "email", "medium": "email", "campaign": "ironside", "content": "single-cta" },
+            "trackingUrl": "https://ironsideresources.com.au/?utm_source=email&utm_medium=email&utm_campaign=ironside&utm_content=single-cta"
+          },
+          {
+            "channel": "blog",
+            "cta": "One next step in the close",
+            "tone": "Considered, informative",
+            "utm": { "source": "blog", "medium": "blog", "campaign": "ironside", "content": "next-step" },
+            "trackingUrl": "https://ironsideresources.com.au/?utm_source=blog&utm_medium=blog&utm_campaign=ironside&utm_content=next-step"
+          }
+        ]
+      },
+      {
+        "id": "ai-systems-setup",
+        "name": "AI Systems Setup",
+        "destinationUrl": "/ai-systems-setup/",
+        "voice": "Warm and light, still sparing on emoji.",
+        "linkedinLockdown": "Curious learner and industry observer only. No pricing, no offer, no DM, no book a call, no service pitch. End with a question or an observation, never a sell.",
+        "channels": [
+          {
+            "channel": "tiktok",
+            "cta": "Soft community CTA only: follow, comment, link in bio",
+            "tone": "Warm, light",
+            "utm": { "source": "tiktok", "medium": "social", "campaign": "ai-systems-setup", "content": "follow-comment-bio" },
+            "trackingUrl": "/ai-systems-setup/?utm_source=tiktok&utm_medium=social&utm_campaign=ai-systems-setup&utm_content=follow-comment-bio"
+          },
+          {
+            "channel": "instagram",
+            "cta": "Save or share or follow, plus link in bio",
+            "tone": "Warm, light",
+            "utm": { "source": "instagram", "medium": "social", "campaign": "ai-systems-setup", "content": "save-share-follow-bio" },
+            "trackingUrl": "/ai-systems-setup/?utm_source=instagram&utm_medium=social&utm_campaign=ai-systems-setup&utm_content=save-share-follow-bio"
+          },
+          {
+            "channel": "youtube",
+            "cta": "Subscribe plus link to landing page",
+            "tone": "Considered, informative",
+            "utm": { "source": "youtube", "medium": "social", "campaign": "ai-systems-setup", "content": "subscribe-landing" },
+            "trackingUrl": "/ai-systems-setup/?utm_source=youtube&utm_medium=social&utm_campaign=ai-systems-setup&utm_content=subscribe-landing"
+          },
+          {
+            "channel": "x",
+            "cta": "Question or useful one liner, link sparingly",
+            "tone": "Direct, useful",
+            "utm": { "source": "x", "medium": "social", "campaign": "ai-systems-setup", "content": "useful-oneliner" },
+            "trackingUrl": "/ai-systems-setup/?utm_source=x&utm_medium=social&utm_campaign=ai-systems-setup&utm_content=useful-oneliner"
+          },
+          {
+            "channel": "linkedin",
+            "cta": "Question or reflection only, never a CTA to buy (see linkedinLockdown)",
+            "tone": "Curious learner and industry observer",
+            "utm": { "source": "linkedin", "medium": "social", "campaign": "ai-systems-setup", "content": "question-reflection" },
+            "trackingUrl": "/ai-systems-setup/?utm_source=linkedin&utm_medium=social&utm_campaign=ai-systems-setup&utm_content=question-reflection"
+          },
+          {
+            "channel": "email",
+            "cta": "May carry the offer with a clear next step",
+            "tone": "Warm, may sell",
+            "utm": { "source": "email", "medium": "email", "campaign": "ai-systems-setup", "content": "offer-next-step" },
+            "trackingUrl": "/ai-systems-setup/?utm_source=email&utm_medium=email&utm_campaign=ai-systems-setup&utm_content=offer-next-step"
+          },
+          {
+            "channel": "blog",
+            "cta": "One next step in the close",
+            "tone": "Considered, informative",
+            "utm": { "source": "blog", "medium": "blog", "campaign": "ai-systems-setup", "content": "next-step" },
+            "trackingUrl": "/ai-systems-setup/?utm_source=blog&utm_medium=blog&utm_campaign=ai-systems-setup&utm_content=next-step"
+          }
+        ]
+      }
+    ]
+  }
 }
