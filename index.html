@@ -185,5 +185,25 @@
       <p><a href="campaigns/campaigns.json">campaign log</a></p>
     </div>
   </footer>
+
+  <script>
+    // Wire up CTA click tracking. Every call-to-action on the page carries a
+    // data-cta label; forward those clicks to the analytics dataLayer (GA4 /
+    // Google Tag Manager) when one is present, and degrade silently when it
+    // is not. A single delegated listener covers CTAs added later too.
+    (function () {
+      window.dataLayer = window.dataLayer || [];
+      document.addEventListener('click', function (event) {
+        var cta = event.target.closest('[data-cta]');
+        if (!cta) return;
+        window.dataLayer.push({
+          event: 'cta_click',
+          cta_id: cta.getAttribute('data-cta'),
+          cta_text: (cta.textContent || '').trim(),
+          cta_href: cta.getAttribute('href') || ''
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
