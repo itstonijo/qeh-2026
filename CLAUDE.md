@@ -22,7 +22,11 @@ UTM-tagged strategy-call booking URL.
 │   └── styles.css        # All styling. Dark theme driven by CSS custom properties.
 ├── campaigns/
 │   └── campaigns.json    # Log of UTM-tagged campaign links used by the page.
-└── .gitignore            # Ignores local render artifacts (screenshot*.png)
+├── docs-inbox/           # "Drop box": put source documents here to convert to Markdown.
+├── docs-md/              # Output: Markdown generated from docs-inbox/.
+├── scripts/
+│   └── convert-docs.sh   # Converts everything in docs-inbox/ into docs-md/*.md.
+└── .gitignore            # Ignores render artifacts + drop-box contents.
 ```
 
 There is no application code, no tests, and no CI workflows (a previous Jekyll /
@@ -53,6 +57,24 @@ A small JSON ledger of marketing links. Each entry records the full UTM URL, the
 clean `destination`, the parsed `utm` params (`source`, `medium`, `campaign`,
 `content`), plus a `name`, `id`, and `notes`. When you add or change a CTA link
 in `index.html`, add the corresponding entry here so the two stay in sync.
+
+### Document drop box (`docs-inbox/` → `docs-md/`)
+A workspace for turning arbitrary documents into Markdown. Drop any file
+(Word, PDF, PowerPoint, Excel, HTML, CSV, plain text, …) into `docs-inbox/`,
+then generate Markdown two ways:
+
+- **Self-serve script**: `scripts/convert-docs.sh` (optionally pass a filename
+  to convert just one). It picks the best converter installed —
+  [markitdown](https://github.com/microsoft/markitdown) (recommended, widest
+  coverage), then `pandoc`, then `pdftotext` for PDFs; `.txt`/`.md` are copied
+  as-is. Output lands in `docs-md/`.
+- **Ask Claude**: for messy layouts or scanned PDFs, drop the file in and ask
+  Claude to convert it — it reads the document and writes clean, well-structured
+  Markdown by hand (better than mechanical conversion).
+
+Contents of `docs-inbox/` and `docs-md/` are git-ignored so source documents
+stay private; commit a specific output with `git add -f docs-md/<file>.md`. The
+folders themselves are kept in the repo via `.gitkeep` (and `docs-inbox/README.md`).
 
 ## Conventions
 

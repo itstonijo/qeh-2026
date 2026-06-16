@@ -1,2 +1,10 @@
 screenshot.png
 screenshot-full.png
+
+# Document drop box — raw inputs and generated Markdown stay local by default.
+# Commit a specific output explicitly with: git add -f docs-md/<file>.md
+docs-inbox/*
+!docs-inbox/.gitkeep
+!docs-inbox/README.md
+docs-md/*
+!docs-md/.gitkeep
