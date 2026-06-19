@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <style>
+    :root { color-scheme: light dark; }
+    body {
+      width: 340px;
+      margin: 0;
+      padding: 14px;
+      font: 13px/1.4 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    h1 { font-size: 14px; margin: 0 0 2px; }
+    p.sub { margin: 0 0 12px; opacity: 0.7; font-size: 12px; }
+    fieldset { border: 1px solid rgba(128,128,128,0.35); border-radius: 8px; margin: 0 0 12px; padding: 8px 10px; }
+    legend { padding: 0 4px; font-weight: 600; font-size: 12px; }
+    label.row { display: flex; align-items: center; gap: 8px; padding: 3px 0; cursor: pointer; }
+    .inline { display: flex; gap: 14px; flex-wrap: wrap; }
+    .inline label { display: flex; align-items: center; gap: 6px; cursor: pointer; }
+    input[type="text"], textarea {
+      width: 100%; box-sizing: border-box; margin-top: 6px; padding: 6px 8px;
+      border: 1px solid rgba(128,128,128,0.4); border-radius: 6px; font: inherit;
+    }
+    textarea { resize: vertical; min-height: 64px; font-size: 12px; }
+    button {
+      width: 100%; padding: 9px; border: 0; border-radius: 8px; cursor: pointer;
+      background: #2b6fff; color: #fff; font-weight: 600; font-size: 13px; margin-top: 4px;
+    }
+    button.secondary { background: transparent; color: inherit; border: 1px solid rgba(128,128,128,0.5); }
+    button:disabled { opacity: 0.6; cursor: default; }
+    .status { margin-top: 10px; min-height: 16px; font-size: 12px; opacity: 0.85; white-space: pre-line; }
+    .hint { font-size: 11px; opacity: 0.6; margin: 2px 0 0; }
+    .tabs { display: flex; gap: 6px; margin-bottom: 12px; }
+    .tabs button { width: auto; flex: 1; padding: 6px; background: transparent; color: inherit; border: 1px solid rgba(128,128,128,0.4); margin: 0; }
+    .tabs button.active { background: #2b6fff; color: #fff; border-color: #2b6fff; }
+    .pane { display: none; }
+    .pane.active { display: block; }
+  </style>
+</head>
+<body>
+  <h1>DOM Scrobe</h1>
+  <p class="sub">Extract page data → download as JSON or CSV.</p>
+
+  <div class="tabs">
+    <button id="tab-single" class="active">Current page</button>
+    <button id="tab-batch">Batch URLs</button>
+  </div>
+
+  <fieldset>
+    <legend>What to grab</legend>
+    <label class="row"><input type="checkbox" id="opt-links" checked /> Links &amp; text</label>
+    <label class="row"><input type="checkbox" id="opt-tables" checked /> Tables</label>
+    <label class="row"><input type="checkbox" id="opt-meta" checked /> Structured / meta</label>
+    <label class="row"><input type="checkbox" id="opt-selector" /> Custom CSS selector</label>
+    <input type="text" id="selector" placeholder="e.g. .product-card .price" />
+    <p class="hint">Matches are included only when this box is ticked.</p>
+  </fieldset>
+
+  <div id="pane-single" class="pane active">
+    <fieldset>
+      <legend>Format</legend>
+      <div class="inline">
+        <label><input type="radio" name="format" value="json" checked /> JSON (one file)</label>
+        <label><input type="radio" name="format" value="csv" /> CSV (per dataset)</label>
+      </div>
+      <p class="hint">CSV exports tables, links and selector matches as separate .csv files.</p>
+    </fieldset>
+    <button id="run-single">Extract current page</button>
+  </div>
+
+  <div id="pane-batch" class="pane">
+    <fieldset>
+      <legend>URLs — one per line</legend>
+      <textarea id="urls" placeholder="https://example.com/page-1&#10;https://example.com/page-2"></textarea>
+      <p class="hint">Each URL opens in a hidden tab, gets scrobed, then closes. Output is a single JSON array. Keep the popup open while it runs.</p>
+    </fieldset>
+    <button id="run-batch">Run batch</button>
+  </div>
+
+  <div class="status" id="status"></div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
