@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex" />
+  <title>Lead Inbox — QEH</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-row">
+      <a class="brand" href="index.html">QEH<span>/2026</span></a>
+      <nav>
+        <a href="index.html">&larr; Back to site</a>
+      </nav>
+      <span class="btn btn-sm" id="lead-count">0 leads</span>
+    </div>
+  </header>
+
+  <section class="hero" style="padding:48px 0 24px;">
+    <div class="container">
+      <p class="eyebrow">Operator view</p>
+      <h1 style="font-size:clamp(28px,4vw,40px);">Lead inbox</h1>
+      <p class="lede">Leads captured from the landing page on this browser. Export to CSV to push into your CRM.</p>
+      <div class="cta-row">
+        <button class="btn btn-primary" id="export-csv" type="button">Export CSV</button>
+        <button class="btn btn-ghost" id="clear-leads" type="button">Clear all</button>
+      </div>
+    </div>
+  </section>
+
+  <section style="border-top:1px solid var(--line);">
+    <div class="container">
+      <div id="empty" class="section-lede" hidden>No leads captured yet on this browser.</div>
+      <div class="table-wrap">
+        <table class="leads-table" id="leads-table">
+          <thead>
+            <tr>
+              <th>Received</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Billings</th>
+              <th>Niche</th>
+              <th>Source</th>
+              <th>Delivered</th>
+            </tr>
+          </thead>
+          <tbody id="leads-body"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    (function () {
+      "use strict";
+      var STORE_KEY = "qeh.leads.v1";
+
+      function readLeads() {
+        try { return JSON.parse(localStorage.getItem(STORE_KEY)) || []; }
+        catch (e) { return []; }
+      }
+
+      function esc(s) {
+        return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) {
+          return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c];
+        });
+      }
+
+      function source(lead) {
+        var u = lead.utm || {};
+        if (u.utm_source || u.utm_campaign) {
+          return [u.utm_source, u.utm_campaign].filter(Boolean).join(" / ");
+        }
+        return lead.referrer ? "ref: " + lead.referrer : "direct";
+      }
+
+      function render() {
+        var leads = readLeads().slice().reverse();
+        var body = document.getElementById("leads-body");
+        var table = document.getElementById("leads-table");
+        var empty = document.getElementById("empty");
+        document.getElementById("lead-count").textContent =
+          leads.length + (leads.length === 1 ? " lead" : " leads");
+
+        body.innerHTML = "";
+        if (!leads.length) {
+          table.hidden = true;
+          empty.hidden = false;
+          return;
+        }
+        table.hidden = false;
+        empty.hidden = true;
+
+        leads.forEach(function (l) {
+          var tr = document.createElement("tr");
+          tr.innerHTML =
+            "<td>" + esc(new Date(l.createdAt).toLocaleString()) + "</td>" +
+            "<td>" + esc(l.name) + "</td>" +
+            "<td><a href='mailto:" + esc(l.email) + "'>" + esc(l.email) + "</a></td>" +
+            "<td>" + esc(l.phone) + "</td>" +
+            "<td>" + esc(l.billings) + "</td>" +
+            "<td>" + esc(l.niche) + "</td>" +
+            "<td>" + esc(source(l)) + "</td>" +
+            "<td>" + (l.delivered ? "✓" : "—") + "</td>";
+          body.appendChild(tr);
+        });
+      }
+
+      function toCsv(leads) {
+        var cols = ["createdAt", "name", "email", "phone", "billings", "niche", "message",
+          "utm_source", "utm_medium", "utm_campaign", "utm_content", "referrer", "delivered"];
+        var rows = [cols.join(",")];
+        leads.forEach(function (l) {
+          var u = l.utm || {};
+          var record = {
+            createdAt: l.createdAt, name: l.name, email: l.email, phone: l.phone,
+            billings: l.billings, niche: l.niche, message: l.message,
+            utm_source: u.utm_source, utm_medium: u.utm_medium, utm_campaign: u.utm_campaign,
+            utm_content: u.utm_content, referrer: l.referrer, delivered: l.delivered ? "yes" : "no",
+          };
+          rows.push(cols.map(function (c) {
+            var v = record[c] == null ? "" : String(record[c]);
+            return '"' + v.replace(/"/g, '""') + '"';
+          }).join(","));
+        });
+        return rows.join("\n");
+      }
+
+      document.getElementById("export-csv").addEventListener("click", function () {
+        var leads = readLeads();
+        if (!leads.length) return;
+        var blob = new Blob([toCsv(leads)], { type: "text/csv;charset=utf-8;" });
+        var url = URL.createObjectURL(blob);
+        var a = document.createElement("a");
+        a.href = url;
+        a.download = "qeh-leads-" + new Date().toISOString().slice(0, 10) + ".csv";
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      });
+
+      document.getElementById("clear-leads").addEventListener("click", function () {
+        if (!confirm("Delete all captured leads from this browser? This cannot be undone.")) return;
+        localStorage.removeItem(STORE_KEY);
+        render();
+      });
+
+      render();
+    })();
+  </script>
+</body>
+</html>
