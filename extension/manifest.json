@@ -1,0 +1,11 @@
+{
+  "manifest_version": 3,
+  "name": "DOM Scrobe",
+  "version": "1.0.0",
+  "description": "Extract links, text, tables, and structured metadata from any web page and download it as JSON.",
+  "permissions": ["activeTab", "scripting", "downloads"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "DOM Scrobe — extract page data"
+  }
+}
