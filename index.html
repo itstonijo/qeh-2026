@@ -169,12 +169,54 @@
         <h2>Ready to run your own desk?</h2>
         <p>Book a 30-minute strategy call. You'll leave with clear insights, the hidden gaps in your plan, and the next steps to launch with confidence.</p>
         <p class="small">Free. No obligation. For experienced recruiters only.</p>
+        <p class="small">Prefer to book directly?
+          <a class="btn-link" data-cta="footer"
+             href="https://www.xrecruiter.io/strategy-call?utm_source=linkedin&amp;utm_medium=social&amp;utm_campaign=xr-services&amp;utm_content=book-strategy-call">
+            Go to the calendar &rarr;</a>
+        </p>
       </div>
       <div>
-        <a class="btn btn-primary btn-lg" data-cta="footer"
-           href="https://www.xrecruiter.io/strategy-call?utm_source=linkedin&amp;utm_medium=social&amp;utm_campaign=xr-services&amp;utm_content=book-strategy-call">
-          Book Your Strategy Call
-        </a>
+        <form id="lead-form" class="lead-form" novalidate>
+          <h3>Book your strategy call</h3>
+          <div class="field">
+            <label for="lead-name">Full name *</label>
+            <input id="lead-name" name="name" type="text" autocomplete="name" required />
+          </div>
+          <div class="field">
+            <label for="lead-email">Work email *</label>
+            <input id="lead-email" name="email" type="email" autocomplete="email" required />
+          </div>
+          <div class="field">
+            <label for="lead-phone">Phone</label>
+            <input id="lead-phone" name="phone" type="tel" autocomplete="tel" />
+          </div>
+          <div class="field">
+            <label for="lead-billings">Current annual billings</label>
+            <select id="lead-billings" name="billings">
+              <option value="">Select…</option>
+              <option>Under $150k</option>
+              <option>$150k – $300k</option>
+              <option>$300k – $500k</option>
+              <option>$500k+</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="lead-niche">Your niche / vertical</label>
+            <input id="lead-niche" name="niche" type="text" placeholder="e.g. tech, healthcare, trades" />
+          </div>
+          <div class="field">
+            <label for="lead-message">Anything we should know?</label>
+            <textarea id="lead-message" name="message" rows="3"></textarea>
+          </div>
+          <!-- simple honeypot for bots; humans never see this -->
+          <div class="field hp" aria-hidden="true">
+            <label for="lead-company">Company (leave blank)</label>
+            <input id="lead-company" name="company" type="text" tabindex="-1" autocomplete="off" />
+          </div>
+          <button class="btn btn-primary btn-lg" type="submit" data-cta="lead-form">Request my call</button>
+          <p class="form-note">By submitting you agree to be contacted about the program. We never share your details.</p>
+          <p id="lead-status" class="form-status" role="status" aria-live="polite"></p>
+        </form>
       </div>
     </div>
   </section>
@@ -182,8 +224,10 @@
   <footer class="footer">
     <div class="container footer-row">
       <p>&copy; 2026 QEH. Replication of publicly described recruitment-agency-in-a-box offering for reference.</p>
-      <p><a href="campaigns/campaigns.json">campaign log</a></p>
+      <p><a href="campaigns/campaigns.json">campaign log</a> &middot; <a href="leads.html">lead inbox</a></p>
     </div>
   </footer>
+
+  <script src="assets/leads.js" defer></script>
 </body>
 </html>
