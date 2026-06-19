@@ -15,7 +15,29 @@ locally in your browser and the data only ever lands in your Downloads folder.
 - **Custom CSS selector** — tick the box, type a selector (e.g. `.product-card .price`),
   and get every match back with its text, attributes, `href`, and inner HTML.
 
-Tick only what you need in the popup, then hit **Extract & download**.
+Tick only what you need in the popup, then hit **Extract current page**.
+
+## Output formats
+
+- **JSON** (default) — one file with everything you ticked.
+- **CSV** — each tabular dataset is exported as its own `.csv`: one per `<table>`,
+  plus `…-links.csv`, `…-selector.csv`, and `…-meta.csv` when those are present.
+
+## Batch mode
+
+Switch to the **Batch URLs** tab, paste one URL per line, and hit **Run batch**.
+Each URL is opened in a hidden background tab, scrobed (with the same "what to grab"
+options), then closed — sequentially, to stay gentle on the sites. The result is a
+single `scrobe-batch-<timestamp>.json` array, one entry per URL:
+
+```json
+[
+  { "url": "https://example.com/a", "ok": true, "result": { "...": "..." } },
+  { "url": "https://example.com/b", "ok": false, "error": "timed out" }
+]
+```
+
+Keep the popup open while a batch runs — it drives the tabs from the popup.
 
 ## Install (Chrome / Edge / Brave)
 
@@ -32,11 +54,14 @@ Tick only what you need in the popup, then hit **Extract & download**.
 
 ## Permissions
 
-- `activeTab` + `scripting` — read the page **only** when you click the button.
-- `downloads` — save the JSON file.
+- `activeTab` + `scripting` — read pages when you click a button.
+- `downloads` — save the JSON/CSV files.
+- `tabs` + `<all_urls>` — needed for **batch mode** to open, read and close the
+  background tabs you list. Single-page mode only ever reads the tab you're on,
+  on your click.
 
-It never runs in the background and requests no host permissions, so it touches a
-page only on your explicit click.
+It never runs in the background on its own — extraction happens only when you
+press a button in the popup.
 
 ## Output
 
