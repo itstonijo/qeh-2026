@@ -8,7 +8,7 @@ Employers in mining and resources, civil construction, government/defence/aerosp
 
 ## Who we are NOT for
 - Non-profit or bad-image companies (reputation risk).
-- Blue-collar labour hire is taken on selectively only, not actively chased (higher risk, even though the standard contractor offering covers it).
+- Generalist, high-volume blue-collar labour hire. We do chase labour hire, but only in specialised fields, not as a body shop.
 - Roles paying under $80k TAR (veterans are used to the money).
 
 ## Products and pricing
@@ -22,7 +22,7 @@ Employers in mining and resources, civil construction, government/defence/aerosp
 To confirm with Toni Jo (she's new and hasn't mapped competitors). Do NOT invent names or stats. Likely-but-unconfirmed: generalist labour hire (WorkPac, Programmed) wins mining/civil roles on price and speed without the veteran angle. Validate before relying on it.
 
 ## Current numbers (private, AI context only)
-Toni Jo's target: bring in over $300k, and she has a comms structure in place to work toward it. Last year's figures she found (~$180k in, ~$24k profit) aren't hers and aren't reliable, treat as rough background only. Quarter goal: 25 contractors on the books by November + 10-15 perm placements. Active paying clients: 2-3 and shrinking, so growth is the priority. Track record (marketing): 4,000+ vetted candidates, 200+ placed in mining/civil since 2018, 98% interview-to-hire.
+Toni Jo's target: bring in $350k, go high or go home, and she has a comms structure in place to work toward it. Last year's figures she found (~$180k in, ~$24k profit) aren't hers and aren't reliable, treat as rough background only. Quarter goal: 25 contractors on the books by November + 10-15 perm placements. Active paying clients: 2-3 and shrinking, so growth is the priority. Track record (marketing): 4,000+ vetted candidates, 200+ placed in mining/civil since 2018, 98% interview-to-hire.
 
 ## Team
 Just the two of us running it day to day: Toni Jo and Row.
