@@ -8,7 +8,7 @@ Employers in mining and resources, civil construction, government/defence/aerosp
 
 ## Who we are NOT for
 - Non-profit or bad-image companies (reputation risk).
-- High-risk, low-margin blue-collar labour hire (Toni Jo is cautious here, even though the standard contractor offering covers it).
+- Blue-collar labour hire is taken on selectively only, not actively chased (higher risk, even though the standard contractor offering covers it).
 - Roles paying under $80k TAR (veterans are used to the money).
 
 ## Products and pricing
@@ -22,7 +22,7 @@ Employers in mining and resources, civil construction, government/defence/aerosp
 To confirm with Toni Jo (she's new and hasn't mapped competitors). Do NOT invent names or stats. Likely-but-unconfirmed: generalist labour hire (WorkPac, Programmed) wins mining/civil roles on price and speed without the veteran angle. Validate before relying on it.
 
 ## Current numbers (private, AI context only)
-Toni Jo's read of last FY P&L: ~$180k brought in, ~$24k profit (may be her desk, not the whole business). Target: $350k/year. Quarter goal: 25 contractors on the books by November + 10-15 perm placements. Active paying clients: 2-3 and shrinking, so growth is the priority. Track record (marketing): 4,000+ vetted candidates, 200+ placed in mining/civil since 2018, 98% interview-to-hire.
+Toni Jo's target: bring in over $300k, and she has a comms structure in place to work toward it. Last year's figures she found (~$180k in, ~$24k profit) aren't hers and aren't reliable, treat as rough background only. Quarter goal: 25 contractors on the books by November + 10-15 perm placements. Active paying clients: 2-3 and shrinking, so growth is the priority. Track record (marketing): 4,000+ vetted candidates, 200+ placed in mining/civil since 2018, 98% interview-to-hire.
 
 ## Team
 Just the two of us running it day to day: Toni Jo and Row.
@@ -49,7 +49,7 @@ Gmail, JobAdder (CRM/ATS), Clixio, company website (job posts), LinkedIn and som
 - Never "Cheers", and never "Kind regards" unless it's a cold first contact.
 
 ## Signature phrases
-Openers: "Happy Friday" (or the day), then "Hi [Name]". Sign-off: "Thank you". Cold first contact only: "Kind regards" / "Look forward to hearing from you". Brand lines: "Leading the Transition", "we're not just filling roles, we're reshaping futures", "we speak both languages, Defence and business".
+Openers: "Happy Friday" (or the day), then "Hi [Name]". Sign-off: "Thank you" with no name after it (the email signature and LinkedIn already carry her name). Cold first contact only: "Kind regards" / "Look forward to hearing from you". Brand lines: "Leading the Transition", "we're not just filling roles, we're reshaping futures", "we speak both languages, Defence and business".
 
 ## Writing rules (hard NOs)
 - Never use CAPS / shouting.
@@ -57,6 +57,7 @@ Openers: "Happy Friday" (or the day), then "Hi [Name]". Sign-off: "Thank you". C
 - No AI slop or templated filler. It has to read like Toni Jo typed it.
 - Emojis sparingly, and never with new or cold clients.
 - Professional but personal, never stiff, never a pitch.
+- Don't sign off with her name. End at "Thank you", the signature handles the rest.
 
 ## This quarter's focus
 - 25 contractors on the books by November.
