@@ -19,7 +19,12 @@ Employers in mining and resources, civil construction, government/defence/aerosp
 - Terms: GST exclusive, 12-month fee trigger, $1,000 cancellation fee after a shortlist is submitted, governed by Victorian law. Invoice financing via Scotpac.
 
 ## Competitive landscape
-To confirm with Toni Jo (she's new and hasn't mapped competitors). Do NOT invent names or stats. Likely-but-unconfirmed: generalist labour hire (WorkPac, Programmed) wins mining/civil roles on price and speed without the veteran angle. Validate before relying on it.
+Mapped 2026-06-20, full detail in ./competitor-analysis.md. Four buckets:
+- Veteran/defence recruiters: ERS Recruitment (closest rival - veteran-owned, mining/oil&gas, WA, but security-skewed and dormant on content), Kinexus (defence white-collar/clearances, different lane), Boots2Business (thin Troocoo+Go2Health partnership).
+- Veteran tech reskiller: WithYouWithMe (tech/cyber only, split into two companies Jan 2026, culture/finance strain).
+- Free NFP/govt programs: RSL Employment, Soldier On, Working Spirit, federal/NSW VEP - free but no active placement, no guarantee, thin throughput.
+- Generalist mining/civil labour hire: WorkPac, Programmed - win the actual reqs on scale/price/speed, weak on worker care, no veteran angle.
+Biggest real threats (rated 4/5): generalist labour hire and ERS. The veteran-branded tech/defence players are 2/5. Our moat: veteran-owned + Social Traders certified + Trade Upgrade Program pipeline + replacement guarantee, a combination none of them hold.
 
 ## Current numbers (private, AI context only)
 Toni Jo's target: bring in $350k, go high or go home, and she has a comms structure in place to work toward it. Last year's figures she found (~$180k in, ~$24k profit) aren't hers and aren't reliable, treat as rough background only. Quarter goal: 25 contractors on the books by November + 10-15 perm placements. Active paying clients: 2-3 and shrinking, so growth is the priority. Track record (marketing): 4,000+ vetted candidates, 200+ placed in mining/civil since 2018, 98% interview-to-hire.
@@ -73,7 +78,7 @@ Start with email, check in with Row, work client emails, live jobs and responses
 - Research for BD and newsletters, plus candidate and client outreach.
 
 ## Open items (Claude: raise these at the start of each session until done)
-- [ ] Competitors: who do we bump into? Name them, what they do better/worse. Currently blank.
+- [x] Competitors: mapped 2026-06-20, see ./competitor-analysis.md and Competitive landscape above. Still to do: confirm with Toni Jo who she actually bumps into in deals, and verify competitor pricing.
 - [ ] Numbers: confirm real business revenue (last year's figures aren't Toni Jo's or reliable).
 - [ ] Keep adding: signature phrases, client quirks, recurring decisions and rules as they surface in real work.
 
