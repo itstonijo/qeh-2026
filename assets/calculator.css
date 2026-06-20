@@ -1,0 +1,108 @@
+/* calculator.css — styles for the earnings-calculator lead magnet.
+   Loaded alongside styles.css; reuses its design tokens (--accent, etc.). */
+
+.nav nav a.active { color: var(--text); }
+
+.calc-hero { padding: 72px 0 40px; }
+
+/* layout: inputs on the left, results on the right */
+.calc-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  align-items: start;
+}
+@media (max-width: 860px) { .calc-grid { grid-template-columns: 1fr; } }
+
+.calc-panel { padding: 26px; }
+.calc-panel h2 { margin: 0 0 18px; font-size: 22px; }
+
+/* input fields */
+.field { margin-bottom: 22px; }
+.field:last-child { margin-bottom: 0; }
+.field > label {
+  display: block; font-weight: 600; font-size: 15px; margin-bottom: 10px;
+}
+.field-row { display: flex; align-items: center; gap: 16px; }
+.field-value {
+  min-width: 96px; text-align: right;
+  font-variant-numeric: tabular-nums;
+  font-weight: 800; font-size: 20px; color: var(--accent);
+}
+.hint { color: var(--muted); font-size: 13px; margin: 8px 0 0; }
+
+/* range slider */
+input[type="range"] {
+  -webkit-appearance: none; appearance: none;
+  width: 100%; height: 6px; border-radius: 999px;
+  background: var(--line); outline: none; cursor: pointer;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; appearance: none;
+  width: 22px; height: 22px; border-radius: 50%;
+  background: var(--accent); border: 3px solid var(--bg);
+  box-shadow: 0 0 0 1px var(--accent);
+}
+input[type="range"]::-moz-range-thumb {
+  width: 22px; height: 22px; border-radius: 50%;
+  background: var(--accent); border: 3px solid var(--bg); cursor: pointer;
+}
+
+/* results */
+.calc-results { display: flex; flex-direction: column; gap: 16px; }
+.result-card {
+  background: var(--panel); border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 22px;
+}
+.result-split { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 420px) { .result-split { grid-template-columns: 1fr; } }
+.result-card.sub { padding: 18px; }
+.result-label { color: var(--muted); font-size: 14px; margin: 0 0 6px; }
+.result-label .muted { color: var(--line); }
+.result-figure {
+  margin: 0; font-size: 38px; font-weight: 800; letter-spacing: -.02em;
+  font-variant-numeric: tabular-nums;
+}
+.result-figure.small { font-size: 26px; }
+.result-figure.good, .good-card .result-label { color: var(--good); }
+.good-card { border-color: rgba(74,222,128,.35); }
+
+.delta-card {
+  background: radial-gradient(600px 200px at 30% -60px, rgba(255,210,63,.16), transparent 70%), var(--panel);
+  border-color: rgba(255,210,63,.4);
+}
+.result-figure.delta { color: var(--accent); font-size: 44px; }
+.result-sub { color: var(--muted); margin: 8px 0 0; font-size: 15px; }
+
+/* lead capture */
+.report-card {
+  display: grid; grid-template-columns: 1.1fr .9fr; gap: 32px;
+  padding: 32px; align-items: center;
+}
+@media (max-width: 760px) { .report-card { grid-template-columns: 1fr; gap: 24px; } }
+.report-copy h2 { margin: 0 0 12px; }
+.report-copy p { color: var(--muted); margin: 0 0 16px; }
+.report-list { list-style: none; padding: 0; margin: 0; }
+.report-list li { position: relative; padding-left: 26px; margin: 10px 0; color: var(--text); }
+.report-list li::before {
+  content: "✓"; position: absolute; left: 0; top: 0;
+  color: var(--good); font-weight: 800;
+}
+
+.lead-form { display: flex; flex-direction: column; gap: 14px; }
+.form-field { display: flex; flex-direction: column; gap: 6px; }
+.form-field label { font-size: 14px; font-weight: 600; }
+.form-field input {
+  background: var(--bg-2); border: 1px solid var(--line); color: var(--text);
+  border-radius: 10px; padding: 13px 14px; font-size: 15px; outline: none;
+}
+.form-field input:focus { border-color: var(--accent); }
+.form-field.hp { position: absolute; left: -9999px; height: 0; overflow: hidden; }
+.lead-form .btn { width: 100%; text-align: center; cursor: pointer; }
+.form-note { color: var(--muted); font-size: 12px; margin: 2px 0 0; text-align: center; }
+.form-status { font-size: 14px; margin: 4px 0 0; text-align: center; min-height: 20px; }
+.form-status.ok { color: var(--good); }
+.form-status.err { color: var(--accent-2); }
+
+/* success state replaces the form */
+.lead-form.is-done { align-items: center; text-align: center; gap: 10px; }
