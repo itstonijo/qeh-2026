@@ -1,67 +1,69 @@
 # Ironside Resources
 
 ## What we do
-We're a veteran recruitment business and a social enterprise. We find Australian veterans who are transitioning or after their next role, translate their military experience into civilian terms, and place them with companies that pay us for the hire.
+We're a national, veteran-owned recruitment agency and certified social enterprise (Social Traders) that places Australian Defence Force veterans, transitioning members and their families into civilian careers. Employers pay us to recruit, and every placement also funds veteran support. We say it as "Leading the Transition" and "we're not just filling roles, we're reshaping futures."
 
 ## Who we serve
-Mid-tier companies in civil and mining (e.g. FTA) hiring trades, trade upgrades, white collar, engineers, supervisors and project managers. They're established employers who genuinely struggle to find qualified people. They're open to the social-enterprise angle (hiring vets) but still need to be sold on it. Roles must be real, profitable, and worth our time.
+Employers in mining and resources, civil construction, government/defence/aerospace, and manufacturing/logistics. They hire trades, operators, WHS, site admin, engineers, supervisors, PMs and white collar (IT, BD, analysts). They're fighting structural skills shortages in safety-critical and technical roles and can't fill from the shrinking civilian pool. Sweet spot is mid-tier operators and tier-1 project supply (e.g. FTA, North East Link, Fortescue, Linfox, WesTrac). They value the veteran work ethic and the ESG/social-procurement credit, but still need to be sold on the veteran pathway.
 
 ## Who we are NOT for
-- Non-profit or bad-image companies.
-- Blue-collar labour hire (too high-risk for us to run).
-- Roles paying under $80k (vets are used to the money).
+- Non-profit or bad-image companies (reputation risk).
+- High-risk, low-margin blue-collar labour hire (Toni Jo is cautious here, even though the standard contractor offering covers it).
+- Roles paying under $80k TAR (veterans are used to the money).
 
 ## Products and pricing
-- Permanent placement: ~14% of salary, flexes by client and role.
-- Labour hire: priced per job, must be profitable, mainly for trade upgrades and trade staff.
-- Process: send a candidate teaser first. Full brief only once terms are agreed, unless they're an existing client with terms already in place.
+- Permanent placement: 15% of TAR up to $120k (14% exclusive/retained), 17% above $120k (16% exclusive/retained). 3-month replacement guarantee.
+- Contractor workforce (labour hire), payroll and compliance via CXC Global: 14% margin blue collar, 16% white collar, oncosts charged at actuals, 4-hour daily minimum, 14-day terms.
+- Temp-to-perm: try on contractor first, reduced conversion fee the longer they're on hire.
+- Trade Upgrade Program (flagship): RAEME and RAAF technicians into Cert III Heavy Mobile Plant, mainly diesel mechanics, as a pipeline not a one-off.
+- Terms: GST exclusive, 12-month fee trigger, $1,000 cancellation fee after a shortlist is submitted, governed by Victorian law. Invoice financing via Scotpac.
 
 ## Competitive landscape
-To research. Toni Jo is new to the role and hasn't mapped competitors yet. Do NOT invent names or stats here. Fill this in only with what Toni Jo confirms.
+To confirm with Toni Jo (she's new and hasn't mapped competitors). Do NOT invent names or stats. Likely-but-unconfirmed: generalist labour hire (WorkPac, Programmed) wins mining/civil roles on price and speed without the veteran angle. Validate before relying on it.
 
 ## Current numbers (private, AI context only)
-Last FY: ~$180k brought in, ~$24k profit. Target: $350k/year (treated as a low bar). Quarter goal: 25 contractors on the books by November + 10-15 perm placements. Active clients: 2-3 and shrinking. We need new business and growth.
+Toni Jo's read of last FY P&L: ~$180k brought in, ~$24k profit (may be her desk, not the whole business). Target: $350k/year. Quarter goal: 25 contractors on the books by November + 10-15 perm placements. Active paying clients: 2-3 and shrinking, so growth is the priority. Track record (marketing): 4,000+ vetted candidates, 200+ placed in mining/civil since 2018, 98% interview-to-hire.
 
 ## Team
-- Toni Jo Mooney — Specialist Recruiter & BD (the everyday driver).
-- Row (Roe) — Director (mainly ops, MYOB, newsletters).
-- Just the two of us.
+- Toni Jo Mooney - Specialist Recruiter & BD, the day-to-day driver.
+- Rowena (Row/Roe) Ferrarotto - COO. Ops, MYOB, newsletters, contractor one-pager. 0457 527 586.
+- Glen Ferrarotto - lead contact on materials, likely founder/owner. 0488 996 040. CONFIRM role.
 
 ## Tech stack
-Gmail, JobAdder (CRM), Clixio, the company website (job posts), LinkedIn and sometimes Seek (candidate outreach), MYOB (Row's domain).
+Gmail, JobAdder (CRM/ATS), Clixio, company website (job posts), LinkedIn and sometimes Seek (sourcing and outreach), MYOB (accounts, Row's domain). Delivery partners: CXC Global (Employer of Record/payroll for contractors), Scotpac (invoice financing).
 
 ## Brand voice
 ### Do (5 concrete phrases with examples)
 - Warm, direct, human: "Good to hear from you, thanks for thinking of us."
-- Contractions, short uneven sentences: "I've got a couple of vets in mind already."
-- Connect before business: open with "Happy Friday" (or the day).
-- A 🙂 only where there's real rapport, and don't overdo it.
+- Contractions and short uneven sentences: "I've got a couple of vets in mind already."
+- Open with the day: "Happy Friday," then "Hi [Name]."
+- Match formality to the relationship: warm but professional for new or cold, looser once there's rapport.
 - Plain talk: "That role is right up our alley."
 
 ### Don't (5 concrete phrases with examples)
-- No corporate/salesy: never "We are a leading provider of best-in-class veteran recruitment solutions."
+- No corporate or salesy: never "We are a leading provider of best-in-class veteran recruitment solutions."
 - No dead filler: never "Thank you for reaching out, your inquiry is important to us."
-- No "I hope this email finds you well" (only if you're being deliberately passive).
+- No emojis with new or cold clients. A 🙂 only where there's real rapport, and never overdone.
 - No process narration: don't write "Here's what I'll do" with a task list.
-- Never "Cheers"; never "Kind regards" unless it's a cold first contact.
+- Never "Cheers", and never "Kind regards" unless it's a cold first contact.
 
 ## Signature phrases
-Openers: "Happy Friday" (or the day), then "Hi [Name]". Sign-off: "Thank you". Cold first contact only: "Kind regards" / "Look forward to hearing from you".
+Openers: "Happy Friday" (or the day), then "Hi [Name]". Sign-off: "Thank you". Cold first contact only: "Kind regards" / "Look forward to hearing from you". Brand lines: "Leading the Transition", "we're not just filling roles, we're reshaping futures", "we speak both languages, Defence and business".
 
 ## Writing rules (hard NOs)
 - Never use CAPS / shouting.
 - No em-dashes.
-- No AI slop or templated filler. It has to read like a real person typed it.
-- Don't overdo emojis, only when it genuinely fits the convo.
+- No AI slop or templated filler. It has to read like Toni Jo typed it.
+- Emojis sparingly, and never with new or cold clients.
 - Professional but personal, never stiff, never a pitch.
 
 ## This quarter's focus
 - 25 contractors on the books by November.
 - 10-15 permanent placements.
-- Win new clients and stop the pipeline shrinking (currently 2-3 active).
+- Win new clients and reverse the shrinking pipeline (currently 2-3 active).
 
 ## Daily operations
-Start with email, check in with Row, work client emails, live jobs and responses, new candidates in the system, and any BD to chase. Call clients, email candidates and clients, outreach on LinkedIn and Seek. Daily ~1hr meeting with Row, plus the odd client meeting. Background: building the candidate pool, BD, monthly newsletters (one candidate, one client, Row leads), and LinkedIn content.
+Start with email, check in with Row, work client emails, live jobs and responses, new candidates in the system, and any BD to chase. Call clients, email candidates and clients, outreach on LinkedIn and Seek. Daily ~1hr meeting with Row, plus the odd client meeting. Background: building the candidate pool, BD, monthly newsletters (one candidate, one client, Row leads), and LinkedIn content. Sales rule: send a candidate teaser/snapshot first, full brief only once terms are agreed. For existing clients with terms, skip straight to the full briefs.
 
 ## Biggest time sinks
 - Formatting resumes, updating the CRM, adding call notes, BD tracking and sourcing.
