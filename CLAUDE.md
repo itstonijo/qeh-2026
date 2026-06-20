@@ -72,6 +72,11 @@ Start with email, check in with Row, work client emails, live jobs and responses
 - Replying to and following up emails, remembering who to chase and where it's at.
 - Research for BD and newsletters, plus candidate and client outreach.
 
+## Open items (Claude: raise these at the start of each session until done)
+- [ ] Competitors: who do we bump into? Name them, what they do better/worse. Currently blank.
+- [ ] Numbers: confirm real business revenue (last year's figures aren't Toni Jo's or reliable).
+- [ ] Keep adding: signature phrases, client quirks, recurring decisions and rules as they surface in real work.
+
 ## Safety rules for anything you do on my behalf
 - Never send emails, always draft.
 - Never spend more than $2 per run without asking.
