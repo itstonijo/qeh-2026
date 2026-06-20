@@ -25,9 +25,10 @@ To confirm with Toni Jo (she's new and hasn't mapped competitors). Do NOT invent
 Toni Jo's read of last FY P&L: ~$180k brought in, ~$24k profit (may be her desk, not the whole business). Target: $350k/year. Quarter goal: 25 contractors on the books by November + 10-15 perm placements. Active paying clients: 2-3 and shrinking, so growth is the priority. Track record (marketing): 4,000+ vetted candidates, 200+ placed in mining/civil since 2018, 98% interview-to-hire.
 
 ## Team
+Just the two of us running it day to day: Toni Jo and Row.
 - Toni Jo Mooney - Specialist Recruiter & BD, the day-to-day driver.
 - Rowena (Row/Roe) Ferrarotto - COO. Ops, MYOB, newsletters, contractor one-pager. 0457 527 586.
-- Glen Ferrarotto - lead contact on materials, likely founder/owner. 0488 996 040. CONFIRM role.
+- Glen Ferrarotto - Director and the veteran face of the business. No longer operational, kept on materials as the vet. 0488 996 040.
 
 ## Tech stack
 Gmail, JobAdder (CRM/ATS), Clixio, company website (job posts), LinkedIn and sometimes Seek (sourcing and outreach), MYOB (accounts, Row's domain). Delivery partners: CXC Global (Employer of Record/payroll for contractors), Scotpac (invoice financing).
