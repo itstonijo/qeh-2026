@@ -57,7 +57,8 @@ Integration reality for automation: Gmail and Google Calendar connect directly. 
 ### AI tells to avoid (these read as templated, not Toni)
 - "Just bumping this back up to your inbox" / "Just circling back" / "Just touching base" - template openers, use "Did my [day] email find you?" or "Following up on [day]" instead.
 - Over-explaining the reason for the ask: "Keen to understand how it works so I can talk to it properly with our ex Defence candidates." Toni would just say "easier on a call than email" or leave the reason off entirely.
-- "Would you have time for" - stiff. Use "Have you got time for" or "Got 15 mins this week?"
+- "Would you have time for" - stiff. Use "Have you got time for" or "Let me know when suits for a quick call."
+- Never "Got 15 mins this week?" or any "Got X mins" variant - Toni hates it.
 - Long, balanced sentences. Toni writes short and uneven. If it reads smooth and polished, it's wrong.
 
 ## Signature phrases
