@@ -83,6 +83,16 @@ Start with email, check in with Row, work client emails, live jobs and responses
 - [ ] Numbers: confirm real business revenue (last year's figures aren't Toni Jo's or reliable).
 - [ ] Keep adding: signature phrases, client quirks, recurring decisions and rules as they surface in real work.
 
+## Display formats
+### Email list format
+When listing emails, always use this format (one numbered block per email):
+```
+1- Name <email address>
+Subject -
+Snippet -
+Time -
+```
+
 ## Safety rules for anything you do on my behalf
 - Never send emails, always draft.
 - Never spend more than $2 per run without asking.
