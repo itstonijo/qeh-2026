@@ -78,6 +78,20 @@ Start with email, check in with Row, work client emails, live jobs and responses
 - Replying to and following up emails, remembering who to chase and where it's at.
 - Research for BD and newsletters, plus candidate and client outreach.
 
+## Output format: email follow-up lists
+When listing emails that need a follow-up (or any list of emails I need to action), always use this exact format, one per entry, numbered:
+
+1 - Name & email address
+Subject -
+Snippet -
+Time -
+
+Rules:
+- Times in AEST, formatted like "Fri 19 Jun, 2:29 PM".
+- Snippet is the first ~1-2 lines of the message body, trimmed. Keep emojis if they're in the original.
+- Group by urgency if it helps (e.g. "Chase these" vs "Lower urgency"), but keep the per-entry format identical.
+- No extra commentary inside an entry. Save context/notes for a short line before or after the list.
+
 ## Open items (Claude: raise these at the start of each session until done)
 - [x] Competitors: mapped 2026-06-20, see ./competitor-analysis.md and Competitive landscape above. Still to do: confirm with Toni Jo who she actually bumps into in deals, and verify competitor pricing.
 - [ ] Numbers: confirm real business revenue (last year's figures aren't Toni Jo's or reliable).
