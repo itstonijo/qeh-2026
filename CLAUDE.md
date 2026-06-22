@@ -56,6 +56,7 @@ Integration reality for automation: Gmail and Google Calendar connect directly. 
 
 ## Signature phrases
 Openers: "Happy Friday" (or the day), then "Hi [Name]". Sign-off: "Thank you" with no name after it (the email signature and LinkedIn already carry her name). Cold first contact only: "Kind regards" / "Look forward to hearing from you". Brand lines: "Leading the Transition", "we're not just filling roles, we're reshaping futures", "we speak both languages, Defence and business".
+- One "Happy [Day]" per thread per day. If she's already opened with it earlier in the same exchange, drop it and just go "Hi [Name],".
 
 ## Writing rules (hard NOs)
 - Never use CAPS / shouting.
