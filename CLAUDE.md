@@ -38,6 +38,7 @@ Just the two of us running it day to day: Toni Jo and Row.
 ## Tech stack
 Gmail, JobAdder (CRM/ATS), Clixio, company website (job posts), LinkedIn and sometimes Seek (sourcing and outreach), MYOB (accounts, Row's domain). Delivery partners: CXC Global (Employer of Record/payroll for contractors), Scotpac (invoice financing).
 Integration reality for automation: Gmail and Google Calendar connect directly. JobAdder and LinkedIn only connect via Zapier. LinkedIn through Zapier can post content but cannot search candidates or send DMs, so LinkedIn sourcing/outreach stays manual. Seek has no integration, sourcing from Seek is manual.
+Email accounts: the work address is toni@ironsideresources.com.au (Google Workspace) and that's the only one that matters for business. The connected calendar/login may show the personal itstonijo@live.com.au account, but always work off the Ironside (toni@ironsideresources.com.au) inbox and calendar. Real meetings and client mail live there, including Teams/Outlook invites that won't appear on the personal calendar. Default to Ironside, ignore the personal account unless I say otherwise.
 
 ## Brand voice
 ### Do (5 concrete phrases with examples)
