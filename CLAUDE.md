@@ -99,6 +99,7 @@ Rules:
 
 ## Safety rules for anything you do on my behalf
 - Never send emails, always draft.
+- Before creating any email draft, show me the full proposed email in chat (recipient, subject, body) and wait for my approval. Only create the Gmail draft once I've okayed it. This stays in place until I explicitly say I trust you to draft directly.
 - Never spend more than $2 per run without asking.
 - Never touch files with 'secret' or 'private' in the name.
 - Always re-read this file at the start of every session.
