@@ -16,6 +16,7 @@ Employers in mining and resources, civil construction, government/defence/aerosp
 - Contractor workforce (labour hire), payroll and compliance via CXC Global: 14% margin blue collar, 16% white collar, oncosts charged at actuals, 4-hour daily minimum, 14-day terms.
 - Temp-to-perm: try on contractor first, reduced conversion fee the longer they're on hire.
 - Trade Upgrade Program (flagship): RAEME and RAAF technicians into Cert III Heavy Mobile Plant, mainly diesel mechanics, as a pipeline not a one-off.
+- Candidate pool (BD pitch angle): our people skew skilled, not raw labour. Mostly ex-Defence technicians and tradespeople (RAEME, RAAF) who often need a trade upgrade to convert their military qualification into a civilian ticket (e.g. Cert III Heavy Mobile Plant). Lead BD pitches with the skilled-trade and Trade Upgrade angle, and chase diesel/fitter/maintenance and skilled ticketed-plant roles over general labouring. "Qualified only" ads are still in play because the Trade Upgrade Program bridges the gap. Contractor work is usually temp-to-perm (try on contract via CXC, convert with a reduced fee the longer on hire), not body-shop labour hire.
 - Terms: GST exclusive, 12-month fee trigger, $1,000 cancellation fee after a shortlist is submitted, governed by Victorian law. Invoice financing via Scotpac.
 
 ## Competitive landscape
