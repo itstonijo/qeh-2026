@@ -64,6 +64,7 @@ Openers: "Happy Friday" (or the day), then "Hi [Name]". Sign-off: "Thank you" wi
 - Emojis sparingly, and never with new or cold clients.
 - Professional but personal, never stiff, never a pitch.
 - Don't sign off with her name. End at "Thank you", the signature handles the rest.
+- Keep emails easy to read. Short lines, plenty of white space, one thought per line or short paragraph. No big dense blocks of text. This is a hard rule for every email.
 
 ## This quarter's focus
 - 25 contractors on the books by November.
