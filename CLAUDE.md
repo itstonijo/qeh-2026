@@ -97,6 +97,16 @@ Rules:
 - [ ] Numbers: confirm real business revenue (last year's figures aren't Toni Jo's or reliable).
 - [ ] Keep adding: signature phrases, client quirks, recurring decisions and rules as they surface in real work.
 
+## Display formats
+### Email list format
+When listing emails, always use this format (one numbered block per email):
+```
+1- Name <email address>
+Subject -
+Snippet -
+Time -
+```
+
 ## Safety rules for anything you do on my behalf
 - Never send emails, always draft.
 - Before creating any email draft, show me the full proposed email in chat (recipient, subject, body) and wait for my approval. Only create the Gmail draft once I've okayed it. This stays in place until I explicitly say I trust you to draft directly.
