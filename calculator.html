@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Recruiter Earnings Calculator — See What You'd Keep on Your Own Desk</title>
+  <meta name="description" content="Find out in 30 seconds how much more you'd take home running your own recruitment agency and keeping 90% of your billings — vs. 15–20% as an employee." />
+  <link rel="stylesheet" href="assets/styles.css" />
+  <link rel="stylesheet" href="assets/calculator.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-row">
+      <a class="brand" href="index.html#top">QEH<span>/2026</span></a>
+      <nav>
+        <a href="index.html#offer">What you get</a>
+        <a href="index.html#programs">Programs</a>
+        <a href="index.html#how">How it works</a>
+        <a href="calculator.html" class="active">Calculator</a>
+      </nav>
+      <a class="btn btn-sm" data-cta="nav" href="index.html#book">Book a Strategy Call</a>
+    </div>
+  </header>
+
+  <section id="top" class="hero calc-hero">
+    <div class="container">
+      <p class="eyebrow">Free earnings calculator</p>
+      <h1>What would you take home<br/>on <span class="hl">your own desk?</span></h1>
+      <p class="lede">As an employee you keep 15–20% of what you bill. Running your own agency, you keep 90%. Move the sliders and see the gap on your numbers — then we'll email you the full breakdown and your 90-Day Launch Playbook.</p>
+    </div>
+  </section>
+
+  <section id="calc" class="calc">
+    <div class="container calc-grid">
+      <!-- Inputs -->
+      <div class="calc-panel card">
+        <h2>Your numbers</h2>
+
+        <div class="field">
+          <label for="fee">Average placement fee</label>
+          <div class="field-row">
+            <input type="range" id="feeRange" min="5000" max="50000" step="1000" value="20000" />
+            <output id="fee" class="field-value">$20,000</output>
+          </div>
+          <p class="hint">Typical perm fee or contract margin per placement.</p>
+        </div>
+
+        <div class="field">
+          <label for="placements">Placements per month</label>
+          <div class="field-row">
+            <input type="range" id="placementsRange" min="1" max="12" step="1" value="2" />
+            <output id="placements" class="field-value">2</output>
+          </div>
+          <p class="hint">How many deals you close in an average month.</p>
+        </div>
+
+        <div class="field">
+          <label for="rate">Your current take-home rate</label>
+          <div class="field-row">
+            <input type="range" id="rateRange" min="5" max="40" step="1" value="20" />
+            <output id="rate" class="field-value">20%</output>
+          </div>
+          <p class="hint">Your base + commission as a % of what you bill, as an employee.</p>
+        </div>
+      </div>
+
+      <!-- Results -->
+      <div class="calc-results">
+        <div class="result-card">
+          <p class="result-label">Your annual billings</p>
+          <p class="result-figure" id="annualBillings">$480,000</p>
+        </div>
+        <div class="result-split">
+          <div class="result-card sub">
+            <p class="result-label">As an employee <span class="muted">(today)</span></p>
+            <p class="result-figure small" id="employeeTakeHome">$96,000</p>
+          </div>
+          <div class="result-card sub good-card">
+            <p class="result-label">Your own agency <span class="muted">(90%)</span></p>
+            <p class="result-figure small good" id="agencyTakeHome">$432,000</p>
+          </div>
+        </div>
+        <div class="result-card delta-card">
+          <p class="result-label">Extra in your pocket every year</p>
+          <p class="result-figure delta" id="deltaYear">+$336,000</p>
+          <p class="result-sub" id="deltaMonth">That's about +$28,000 every month.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lead capture -->
+  <section id="report" class="report">
+    <div class="container">
+      <div class="report-card card">
+        <div class="report-copy">
+          <h2>Get your full breakdown + the 90-Day Launch Playbook</h2>
+          <p>We'll email you a personalised version of these numbers plus the step-by-step plan to launch your own agency in 90 days — without dropping your income or risking your reputation.</p>
+          <ul class="report-list">
+            <li>Your earnings breakdown, saved and sent to you</li>
+            <li>The 90-Day Launch Playbook (PDF)</li>
+            <li>A no-pressure path to a strategy call when you're ready</li>
+          </ul>
+        </div>
+
+        <form id="leadForm" class="lead-form" novalidate>
+          <div class="form-field">
+            <label for="name">First name</label>
+            <input type="text" id="name" name="name" autocomplete="given-name" placeholder="Sam" required />
+          </div>
+          <div class="form-field">
+            <label for="email">Work email</label>
+            <input type="email" id="email" name="email" autocomplete="email" placeholder="sam@email.com" required />
+          </div>
+          <!-- honeypot: hidden from humans, catches bots -->
+          <div class="form-field hp" aria-hidden="true">
+            <label for="company">Company</label>
+            <input type="text" id="company" name="company" tabindex="-1" autocomplete="off" />
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg" data-cta="lead-submit">Email me my breakdown</button>
+          <p class="form-note">No spam. Unsubscribe anytime. For experienced recruiters only.</p>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <p>&copy; 2026 QEH. Earnings figures are illustrative estimates based on the numbers you enter.</p>
+      <p><a href="index.html">&larr; Back to home</a></p>
+    </div>
+  </footer>
+
+  <script src="assets/scrobe.js" defer></script>
+  <script src="assets/calculator.js" defer></script>
+</body>
+</html>
