@@ -80,6 +80,7 @@ Every card's "Tools" line below reflects this.
 - **How it works:** AI runs a weekly content calendar and drafts posts on the agreed themes (the competitor analysis pointed to veteran-tradie outcome stories — North East Link, Fortescue diesel mechanics). This is the one LinkedIn task Zapier *can* do: scheduled posting. She approves, Zapier posts.
 - **Priority:** MEDIUM
 - **Tools:** web search, Claude, LinkedIn posting (via Zapier)
+- **Built:** see `automations/linkedin-personal-brand.md` (automation #4) and the seeded drafts in `content/linkedin-posts-batch-1.md` — personal-profile posts, Buffer for the queue, 3-week manual-approval trial before it runs on its own.
 
 ### 10. Pipeline review & BD review (weekly)
 - **Current time:** ~1 hr each (~2 hrs/week).
