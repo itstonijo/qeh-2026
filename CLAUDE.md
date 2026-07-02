@@ -36,7 +36,7 @@ Just the two of us running it day to day: Toni Jo and Row.
 - Glen Ferrarotto - Director and the veteran face of the business. No longer operational, kept on materials as the vet. 0488 996 040.
 
 ## Tech stack
-Gmail, JobAdder (CRM/ATS), Clixio, company website (job posts), LinkedIn and sometimes Seek (sourcing and outreach), MYOB (accounts, Row's domain). Delivery partners: CXC Global (Employer of Record/payroll for contractors), Scotpac (invoice financing).
+Gmail, JobAdder (CRM/ATS), Clixio, company website (job posts), LinkedIn and sometimes Seek (sourcing and outreach), MYOB (accounts, Row's domain). Delivery partners: CXC Global (Employer of Record/payroll for contractors), Scotpac (invoice financing). Buffer (planned, via Zapier): queues Toni Jo's LinkedIn personal-brand posts once she connects an account, see automations/linkedin-personal-brand.md.
 Integration reality for automation: Gmail and Google Calendar connect directly. JobAdder and LinkedIn only connect via Zapier. LinkedIn through Zapier can post content but cannot search candidates or send DMs, so LinkedIn sourcing/outreach stays manual. Seek has no integration, sourcing from Seek is manual.
 
 ## Brand voice
@@ -96,10 +96,12 @@ Rules:
 - [x] Competitors: mapped 2026-06-20, see ./competitor-analysis.md and Competitive landscape above. Still to do: confirm with Toni Jo who she actually bumps into in deals, and verify competitor pricing.
 - [ ] Numbers: confirm real business revenue (last year's figures aren't Toni Jo's or reliable).
 - [ ] Keep adding: signature phrases, client quirks, recurring decisions and rules as they surface in real work.
+- [ ] Personal brand: automation #4 spec written (automations/linkedin-personal-brand.md) with a seeded first batch (content/linkedin-posts-batch-1.md). Toni Jo to confirm the niche statement, work through the profile checklist, and run the 3-week approval trial before it's trusted to run on its own. Hard rule added: story posts must be real and consented, never invented — see the guardrails in that file. The story slot in batch-1 is still pending real material from Toni Jo.
 
 ## Safety rules for anything you do on my behalf
 - Never send emails, always draft.
 - Before creating any email draft, show me the full proposed email in chat (recipient, subject, body) and wait for my approval. Only create the Gmail draft once I've okayed it. This stays in place until I explicitly say I trust you to draft directly.
+- Same rule for LinkedIn: never queue or post anything automatically, always show me the full post text in chat and wait for my approval first. This stays in place until I explicitly say I trust the queue to run on its own.
 - Never spend more than $2 per run without asking.
 - Never touch files with 'secret' or 'private' in the name.
 - Always re-read this file at the start of every session.
