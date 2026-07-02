@@ -96,7 +96,7 @@ Rules:
 - [x] Competitors: mapped 2026-06-20, see ./competitor-analysis.md and Competitive landscape above. Still to do: confirm with Toni Jo who she actually bumps into in deals, and verify competitor pricing.
 - [ ] Numbers: confirm real business revenue (last year's figures aren't Toni Jo's or reliable).
 - [ ] Keep adding: signature phrases, client quirks, recurring decisions and rules as they surface in real work.
-- [ ] Personal brand: automation #4 spec written (automations/linkedin-personal-brand.md) with a seeded first batch (content/linkedin-posts-batch-1.md). Toni Jo to confirm the niche statement, work through the profile checklist, and run the 3-week approval trial before it's trusted to run on its own.
+- [ ] Personal brand: automation #4 spec written (automations/linkedin-personal-brand.md) with a seeded first batch (content/linkedin-posts-batch-1.md). Toni Jo to confirm the niche statement, work through the profile checklist, and run the 3-week approval trial before it's trusted to run on its own. Hard rule added: story posts must be real and consented, never invented — see the guardrails in that file. The story slot in batch-1 is still pending real material from Toni Jo.
 
 ## Safety rules for anything you do on my behalf
 - Never send emails, always draft.

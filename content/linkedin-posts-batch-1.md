@@ -16,13 +16,13 @@ Per the 3-week trial: every post in this batch gets shown and approved before it
 >
 > That's the Trade Upgrade Program. It's not a one-off placement, it's a pipeline. If you're short on qualified operators, this is worth a conversation.
 
-**2. Story — placement outcome**
+**2. STORY SLOT — PENDING REAL MATERIAL (do not fill with an invented story)**
 
-> Placed a veteran into a site role on a tier-1 civil project a while back. Ex-Army, years of vehicle maintenance experience, no civilian trade ticket to his name.
+> This slot was originally drafted with a fabricated placement story — no real candidate, no real employer, no real quote. Pulled per Toni Jo's "make it real" note.
 >
-> Eighteen months later he's running his own shift. The employer's exact words: "wish we'd found more like him sooner."
+> To fill this slot with a real story, we need from you: a specific placement you're comfortable featuring publicly, the outcome (in your own words, nothing invented), and whether the candidate/employer can be named or should be anonymised (e.g. "a veteran I placed into a mining role" with no identifying detail).
 >
-> That's the whole reason Ironside exists. The skills are already there. Someone just has to make the introduction.
+> **Important:** checking real records for this turned up sensitive personal material a candidate shared with you in confidence (background-check detail, personal history) — that kind of detail must never go into a public post, real or anonymised, without that person's explicit, informed consent to use it for this exact purpose. Pick someone and a story you know they'd be comfortable seeing on LinkedIn, and keep it to the professional outcome, not anything from their file.
 
 **3. Objection-handling — why a veteran over a generalist**
 

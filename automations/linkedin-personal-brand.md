@@ -7,6 +7,8 @@ From the workflow map, item #9 (LinkedIn content, ~2 hrs/week). Builds Toni Jo's
 ## Hard guardrails (non-negotiable)
 - **Draft only, never auto-post.** Same rule as the email drafter: every batch of posts is shown in chat for Toni Jo's approval before anything is queued or published. This stays in place until she explicitly says she trusts the queue to run itself.
 - **No sourcing or outreach automation.** LinkedIn via Zapier can post — it cannot search candidates, read the feed, or send DMs. That's a hard API limit, not a settings problem. Commenting, replying, and DMing stay 100% manual (see the daily routine below).
+- **Story posts must be real, not invented.** Never fabricate a name, employer, timeline, outcome, or quote to fill a content-mix slot. A story post is grounded either in (a) a real placement Toni Jo confirms and describes herself, or (b) a real JobAdder record pulled via the already-enabled Zapier read actions (`find_placement`/`get_placement`, `get_candidate`) — never invention. If no real story is ready for a given week, use a different (non-story) post type instead of making one up.
+- **Consent before publishing anyone's story, real or anonymised.** Real isn't enough on its own — the candidate or client needs to be someone Toni Jo knows would be comfortable seeing it on LinkedIn. Default to anonymising ("a veteran I placed into a mining role," no identifying detail) unless she's explicitly fine with naming them, mirroring how the newsletter already anonymises candidates. Never pull sensitive record detail into a post — background/police-check results, personal or financial circumstances, anything a candidate disclosed in confidence for the recruitment process only. That material stays in the CRM, full stop.
 - Voice rules from CLAUDE.md are embedded in the AI prompt below — no corporate lines, no em-dashes, no emoji with cold contacts, sign off "Thank you" with no name.
 
 ## Prerequisites
@@ -95,6 +97,15 @@ VOICE (follow exactly):
 POST TYPES FOR THIS BATCH:
 [list from the content mix table, e.g. "1. Educational — Trade Upgrade Program;
 2. Story — placement outcome; 3. Objection — why a veteran over a generalist"]
+
+IF a Story-type post is in this batch: only write it if real material is supplied
+below in STORY MATERIAL. Never invent a name, employer, timeline, outcome or quote.
+If no real story material is supplied, swap that slot for a different post type
+instead of drafting a placeholder story.
+
+STORY MATERIAL (leave blank if none supplied — see rule above):
+[Toni Jo's own account of a real placement she's confirmed is OK to feature,
+already anonymised or named per her instruction, with no sensitive record detail]
 
 MATERIAL TO DRAW ON:
 - Trade Upgrade Program: RAEME/RAAF technicians into Cert III Heavy Mobile Plant,
