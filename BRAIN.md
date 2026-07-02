@@ -1,6 +1,6 @@
 # Ironside Resources
 
-*BRAIN.md mirrors this file for tools that read that filename instead of CLAUDE.md. This file is the source of truth — update here first, then bring BRAIN.md in sync.*
+*This file mirrors CLAUDE.md, for tools that read BRAIN.md instead of CLAUDE.md. CLAUDE.md is the source of truth — update there first, then bring this file in sync.*
 
 ## What we do
 We're a national, veteran-owned recruitment agency and certified social enterprise (Social Traders) that places Australian Defence Force veterans, transitioning members and their families into civilian careers. Employers pay us to recruit, and every placement also funds veteran support. We say it as "Leading the Transition" and "we're not just filling roles, we're reshaping futures."
